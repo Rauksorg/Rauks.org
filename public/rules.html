@@ -1,0 +1,163 @@
+<!--Copyright 2013 Thibaut CONSTANT-->
+<!--This file is part of mj_helper.-->
+<!---->
+<!-- mj_helper is free software: you can redistribute it and/or modify-->
+<!-- it under the terms of the GNU General Public License as published
+by-->
+<!-- the Free Software Foundation, either version 3 of the License, or-->
+<!-- (at your option) any later version.-->
+<!---->
+<!-- mj_helper is distributed in the hope that it will be useful,-->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the-->
+<!-- GNU General Public License for more details.-->
+<!---->
+<!-- You should have received a copy of the GNU General Public License-->
+<!-- along with mj_helper. If not, see <http://www.gnu.org/licenses/>.-->
+<!---->
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"
+        />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!------------PAGE1------------>
+        <div data-role="page" data-theme="c" id="rules-list">
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <h1>Régles</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="desk.html">Bureau</a>
+                        </li>
+                        <li>
+                            <a href="rules.html" class="ui-btn-active ui-state-persist">Livre de régles</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+            </div>
+            <!--/header-->
+            <div data-role="content">
+                <ul data-role="listview" data-filter="true" data-filter-placeholder=""
+                data-filter-theme="c">
+                    <li>
+                        <a href="#rules-page">Création d’un personnage</a>
+                    </li>
+                    <li>
+                        <a href="#">Compétances</a>
+                    </li>
+                    <li>
+                        <a href="#">Jets de dés</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/content-->
+        </div>
+        <!--/page-->
+        <!------------PAGE2------------>
+        <div data-role="page" data-theme="c" id="rules-page">
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <h1>Régles</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a href="desk.html">Bureau</a>
+                        </li>
+                        <li>
+                            <a href="rules.html" class="ui-btn-active ui-state-persist">Livre de régles</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /navbar -->
+            </div>
+            <div data-role="content">
+                <h1>Création d’un personnage</h1>
+                <h2>
+                    <strong>Choix de la civilit&eacute;</strong>
+                </h2>
+                <p>Il faut commencer par d&eacute;terminer la race et l&#39;ethnie d&rsquo;un
+                    personnage, ainsi que son nom et son sexe. De base, un personnage est un
+                    commun.</p>
+                <p>Les personnages sont &eacute;galement des m&eacute;ta-humain ayant conscience
+                    de leur &eacute;tat.</p>
+                <h2>
+                    <strong>Choix des caract&eacute;ristiques</strong>
+                </h2>
+                <p>Il faut r&eacute;partir 18 points dans les 6 caract&eacute;ristiques du
+                    personnage :</p>
+                <ul>
+                    <li>
+                        <p>La vivacit&eacute;</p>
+                    </li>
+                    <li>
+                        <p>La perception</p>
+                    </li>
+                    <li>
+                        <p>L&rsquo;intelligence</p>
+                    </li>
+                    <li>
+                        <p>Le charisme</p>
+                    </li>
+                    <li>
+                        <p>La force</p>
+                    </li>
+                    <li>
+                        <p>Les relances</p>
+                    </li>
+                </ul>
+                <p>Chaque caract&eacute;ristique peut aller de 2 &agrave; 4.</p>
+                <p>2 repr&eacute;sente un personnage faible, 3 un personnage normal, 4 un
+                    personnage fort.</p>
+                <h2>
+                    <strong>D&eacute;termination des scores</strong>
+                </h2>
+                <p>La d&eacute;termination des scores est simple :</p>
+                <ul>
+                    <li>
+                        <p>La vitesse est fix&eacute;e &agrave; 5 &eacute;tant donn&eacute; qu&rsquo;il
+                            est un humano&iuml;de</p>
+                    </li>
+                    <li>
+                        <p>Son armure est fix&eacute;e &agrave; 8 &eacute;tant donn&eacute; qu&rsquo;il
+                            est un meta-humain</p>
+                    </li>
+                    <li>
+                        <p>Le nombre r&eacute;el de ses relance est d&eacute;termin&eacute; par &ldquo;Relance
+                            x 3&rdquo;</p>
+                    </li>
+                </ul>
+                <h2>
+                    <strong>Choix des comp&eacute;tences</strong>
+                </h2>
+                <p>Le Joueur choisi les 6 comp&eacute;tences de son personnage. En faisant
+                    attention si il s&rsquo;agit de comp&eacute;tences facilitant le jet de
+                    d&eacute;s ou rendant gratuite la premi&egrave;re relance d&rsquo;un jet.</p>
+                <h2>
+                    <strong>Choix du sort</strong>
+                </h2>
+                <p>Le MJ propose un sort qui soit utile et coh&eacute;rent avec le personnage
+                    cr&eacute;&eacute;. Pour aider le MJ dans son choix, le joueur peut d&eacute;crire
+                    son personnage et la fa&ccedil;on dont il se l&rsquo;imagine</p>
+                <h2>
+                    <strong>Attribution de l&rsquo;&eacute;quipement</strong>
+                </h2>
+                <p>Le MJ donne un peu d&rsquo;&eacute;quipement au personnage, en accord
+                    avec ses comp&eacute;tences.</p>
+            </div>
+            <!--/content-->
+        </div>
+        <!--/page-->
+        <script src="JS/mustache.min.js"></script>
+        <script src="JS/desk.js"></script>
+    </body>
+
+</html>

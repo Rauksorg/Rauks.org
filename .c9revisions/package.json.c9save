@@ -1,0 +1,2 @@
+{"ts":1374365432785,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1374365475724,"patch":[[{"diffs":[[1,"{\r\n  \"name\": \"mj_helper\",\r\n  \"description\": \"\",\r\n  \"author\": \"Thibaut CONSTANT\",\r\n  \"version\": \"0.0.1\",\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"express\": \"3.3.1\",\r\n    \"mongoose\":\"3.6.13\"\r\n},\r\n\"engines\": {\r\n    \"node\": \"0.10.12\",\r\n    \"npm\": \"1.2.30\"\r\n  }\r\n\r\n}"]],"start1":0,"start2":0,"length1":0,"length2":267}]],"length":267,"saved":false}
