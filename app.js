@@ -15,7 +15,7 @@
 //     along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 // 
 // "use strict";
-//require the parameters file
+
 var express = require("express"),
     app = express(),
     server = require('http').createServer(app);
