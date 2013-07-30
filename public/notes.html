@@ -1,0 +1,68 @@
+<!--Copyright 2013 Thibaut CONSTANT-->
+<!--This file is part of mj_helper.-->
+<!---->
+<!-- mj_helper is free software: you can redistribute it and/or modify-->
+<!-- it under the terms of the GNU General Public License as published
+by-->
+<!-- the Free Software Foundation, either version 3 of the License, or-->
+<!-- (at your option) any later version.-->
+<!---->
+<!-- mj_helper is distributed in the hope that it will be useful,-->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the-->
+<!-- GNU General Public License for more details.-->
+<!---->
+<!-- You should have received a copy of the GNU General Public License-->
+<!-- along with mj_helper. If not, see <http://www.gnu.org/licenses/>.-->
+<!---->
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"
+        />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+    </head>
+    
+    <body>
+        <!---->
+        <!------------PAGE1------------>
+        <div data-role="page" data-theme="c" id="desk">
+            <div data-role="header" data-position="fixed" data-theme="c">
+                <h1>Notes</h1>
+            </div>
+            <div data-role="content">
+                <legend>Tags</legend>
+                <fieldset data-role="controlgroup" data-type="horizontal">
+                    
+                        <a data-role="button" class="ui-disabled">NOTES</a>
+                    
+                    <select id="sc-tag1">
+                        <option>. . .</option>
+                        <option>Orcanoir</option>
+                        <option>Background</option>
+                    </select>
+                    <select id="sc-tag2">
+                        <option>. . .</option>
+                        <option>Orcanoir</option>
+                        <option>Background</option>
+                    </select>
+                    <a data-role="button" data-icon="plus" data-iconshadow="true" data-iconpos="right">Ajouter</a>
+                </fieldset>
+                <legend>Titre</legend>
+                <input type="text">
+                <legend>Texte</legend>
+                <textarea></textarea>
+            </div>
+            <!--/content-->
+        </div>
+        <!--/page-->
+        <script src="JS/jquery.mobile.subpage.js"></script>
+        <script src="JS/desk.js"></script>
+    </body>
+
+</html>

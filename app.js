@@ -24,5 +24,5 @@ app.configure(function() {
 });
 server.listen(process.env.PORT, process.env.IP);
 app.get('/', function(req, res) {
-    res.redirect("../desk.html");
+    res.redirect("../rules.html");
 });
