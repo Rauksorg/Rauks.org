@@ -24,8 +24,12 @@ by-->
         <link rel="icon" type="image/png" href="favicon.png" />
         <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"
         />
+        <link rel="stylesheet" href="JS/jqte/jquery-te-1.4.0.css" />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+        <!---->
+        <script src="JS/mustache.min.js"></script>
+        <script src="JS/jqte/jquery-te-1.4.0.min.js"></script>
     </head>
     
     <body>
@@ -58,45 +62,15 @@ by-->
                 <input type="text">
                 <!---->
                 <!---->
-                <div id="wysihtml5-toolbar" style="display: none;">
-                    <div data-role="fieldcontain">
-                        <fieldset data-role="controlgroup" data-type="horizontal">
-                            <a data-role="button" data-wysihtml5-command="bold">bold</a>
-                            <a data-role="button" data-wysihtml5-command="italic">italic</a>
-                            <a data-role="button" data-wysihtml5-command="createLink">insert link</a>
-                            <a data-role="button" data-wysihtml5-command="insertHTML" data-wysihtml5-command-value="<select id='sc-tag2 '> <option>. . .</option> <option>Orcanoir</option> <option>Background</option> </select>">insert quote</a>
-                        </fieldset>
-                    </div>
-                    <!-- Some wysihtml5 commands like 'createLink' require extra paramaters
-                    specified by the user (eg. href) -->
-                    <div data-wysihtml5-dialog="createLink" style="display: none;">
-                        <label>Link:
-                            <input data-wysihtml5-dialog-field="href" value="http://" class="text">
-                        </label>
-                        <a data-role="button" data-wysihtml5-dialog-action="save">OK</a>
-                        <a data-role="button" data-wysihtml5-dialog-action="cancel">Cancel</a>
-                    </div>
-                </div>
                 <!---->
                 <!---->
-                <legend>Texte</legend>
-                <textarea id="wysihtml5-textarea">
-                    <h1>Some text</h1>
-                </textarea>
-                
+                <textarea id="editor"></textarea>
             </div>
             <!-- /content -->
         </div>
         <!-- /page -->
-        <script src="JS/mustache.min.js"></script>
-        <script src="JS/desk.js"></script>
-        <script src="JS/wysihtml5/advanced.js"></script>
-        <script src="JS/wysihtml5/wysihtml5-0.3.0.min.js"></script>
         <script>
-            var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
-                toolbar: "wysihtml5-toolbar", // id of toolbar element
-                parserRules: wysihtml5ParserRules // defined in parser rules set 
-            });
+            $("#editor").jqte();
         </script>
     </body>
 
