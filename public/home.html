@@ -22,49 +22,43 @@ by-->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="icon" type="image/png" href="favicon.png" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css"
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"
         />
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
     </head>
     
     <body>
         <div data-role="page" data-theme="c" id="home">
             <div data-role="content">
                 <div style="text-align: center;margin:0 auto;">
-                    <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <input type="radio" name="navbar" id="navbar-1" checked="checked" />
-                        <label for="navbar-1">Accueil</label>
-                        <input type="radio" name="navbar" id="navbar-2" />
-                        <label for="navbar-2">A propos</label>
-                        <input type="radio" name="navbar" id="navbar-3" />
-                        <label for="navbar-3">Histoire</label>
-                        <input type="radio" name="navbar" id="navbar-4" />
-                        <label for="navbar-4">Régles</label>
-                        <input type="radio" name="navbar" id="navbar-5" />
-                        <label for="navbar-5">Matériel</label>
-                    </fieldset>
+                    <div data-role="controlgroup" data-type="horizontal" data-mini="true"> 
+                        <a href="home.html" data-role="button">Accueil</a>
+                        <a href="about.html" data-role="button">A propos</a>
+                        <a href="" data-role="button">Histoire</a>
+                        <a href="" data-role="button">Régles</a>
+                        <a href="" data-role="button">Matériel</a>
+                    </div>
                     <!--/navbar-->
                     <h1 style="font-size:3.5em">Rauks.org jeu de rôles machin</h1>
                 </div>
-                <p style="width:50%;margin:0 auto;text-align:justify;">Sed ac egestas dui. Vivamus ac pretium turpis. Donec tincidunt neque at
-                    tellus adipiscing interdum. Sed diam arcu, mollis non viverra rhoncus,
-                    iaculis vel dui. Vestibulum feugiat non est sit amet porta. Etiam semper
-                    elementum lectus adipiscing molestie. Maecenas nec sem a lectus bibendum
-                    convallis. Nam quis risus eu ante pharetra pharetra. Ut tincidunt vestibulum
-                    enim, et pellentesque libero porttitor eu. Fusce quis ipsum sit amet nisl
-                    suscipit consectetur. Pellentesque tincidunt porta quam, quis varius nibh
-                    convallis ac. Vestibulum ultricies libero quis arcu dictum fringilla. Nunc
-                    vulputate eu purus sed porttitor. Nam semper mi odio, quis consectetur
-                    felis lacinia nec.</p>
-                    <div style="margin:0 auto;text-align:center;">
-                    <img src="IMG/desert2.png" alt="desert" height=300 >
-                    </div>
+                <p style="width:50%;margin:0 auto;text-align:justify;">Vous serez un Rauks, un mercenaire avec une liberté extrême dans la réalisation
+                    de ses missions.
+                    <br>Plongé dans un monde dominé par un empire bureaucratique prônant l’égalité
+                    entre deux races du genre homo : les hommes et les orcs. Un monde que l’électronique
+                    a révolutionné, sans pour autant connaître de révolution industrielle.
+                    <br>
+                    <br>Rauks.org se veut à la fois accessible pour les joueurs débutants et adapté
+                    aux rolistes aguerris. Tout est fait pour rendre les règles faciles à apprendre
+                    et à utiliser afin de se concentrer sur l'essentiel : Le jeu de rôle en
+                    lui même.</p>
+                <div style="margin:0 auto;text-align:center;">
+                    <img src="IMG/desert.png" alt="desert" height=300 style="border-radius: 2px;">
+                </div>
             </div>
         </div>
         <!--</page-->
-        <script src="JS/jquery.mobile.subpage.js"></script>
-        <script src="JS/desk.js"></script>
+        <script src="JS/rauks.js"></script>
     </body>
 
 </html>
