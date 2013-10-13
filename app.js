@@ -23,6 +23,14 @@ app.configure(function() {
     app.use(express.static(__dirname + '/public'));
 });
 server.listen(process.env.PORT, process.env.IP);
+// 
+// Routeur :
 app.get('/', function(req, res) {
-    res.redirect("../home.html");
+    res.sendfile(__dirname + '/public' + "/home.html");
+});
+app.get('/about', function(req, res) {
+    res.sendfile(__dirname + '/public' + "/about.html");
+});
+app.get('/404', function(req, res) {
+    res.send(404, 'Sorry, we cannot find that!');
 });
