@@ -17,7 +17,7 @@
 
 $(document).on("pageinit", function() {
     $.get('/TEMPLATES/navbar.html', function(template) {
-        $(".navbardiv").html(template);
-        $(".navbardiv").trigger("create");
+        $(".navbartempl").html(template);
+        $(".navbartempl").trigger("create");
     });
 });
