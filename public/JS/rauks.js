@@ -16,6 +16,8 @@
 // along with Rauks.org. If not, see <http://www.gnu.org/licenses/>.
 
 $(document).on("pageinit", function() {
-
+    $.get('/TEMPLATES/navbar.html', function(template) {
+        $(".navbardiv").html(template);
+        $(".navbardiv").trigger("create");
+    });
 });
-

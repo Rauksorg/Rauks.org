@@ -15,7 +15,7 @@
 //     along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 // 
 // "use strict";
-
+var directory = __dirname + '/public';
 var express = require("express"),
     app = express(),
     server = require('http').createServer(app);
@@ -26,11 +26,13 @@ server.listen(process.env.PORT, process.env.IP);
 // 
 // Routeur :
 app.get('/', function(req, res) {
-    res.sendfile(__dirname + '/public' + "/home.html");
+    res.sendfile( directory + "/home.html");
 });
 app.get('/about', function(req, res) {
-    res.sendfile(__dirname + '/public' + "/about.html");
+    res.sendfile(directory + "/about.html");
 });
-app.get('/404', function(req, res) {
-    res.send(404, 'Sorry, we cannot find that!');
+
+//Handle 404
+app.use(function(req, res, next){
+  res.send(404, 'Sorry cant find that!');
 });
