@@ -31,6 +31,9 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
     res.sendfile(directory + "/about.html");
 });
+app.get('/rules', function(req, res) {
+    res.sendfile(directory + "/rules.html");
+});
 
 //Handle 404
 app.use(function(req, res, next){
