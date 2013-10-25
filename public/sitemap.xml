@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://www.rauks.org</loc>
-    <lastmod>2013-10-13</lastmod>
+    <lastmod>2013-10-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
     <url>
     <loc>http://www.rauks.org/about</loc>
-    <lastmod>2013-10-13</lastmod>
+    <lastmod>2013-10-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+   <url>
+    <loc>http://www.rauks.org/rules</loc>
+    <lastmod>2013-10-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
