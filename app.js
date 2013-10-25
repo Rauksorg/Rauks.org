@@ -34,6 +34,14 @@ app.get('/about', function(req, res) {
 app.get('/rules', function(req, res) {
     res.sendfile(directory + "/rules.html");
 });
+// Rules routeur
+app.get('/rules/character', function(req, res) {
+    res.sendfile(directory + "/rules/character.html");
+});
+app.get('/rules/skills', function(req, res) {
+    res.sendfile(directory + "/rules/skills.html");
+});
+
 
 //Handle 404
 app.use(function(req, res, next){
