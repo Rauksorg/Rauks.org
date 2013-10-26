@@ -1,0 +1,152 @@
+<!--Copyright 2013 Thibaut CONSTANT-->
+<!--This file is part of Rauks.org.-->
+<!---->
+<!-- Rauks.org is free software: you can redistribute it and/or modify-->
+<!-- it under the terms of the GNU General Public License as published
+by-->
+<!-- the Free Software Foundation, either version 3 of the License, or-->
+<!-- (at your option) any later version.-->
+<!---->
+<!-- Rauks.org is distributed in the hope that it will be useful,-->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the-->
+<!-- GNU General Public License for more details.-->
+<!---->
+<!-- You should have received a copy of the GNU General Public License-->
+<!-- along with Rauks.org. If not, see <http://www.gnu.org/licenses/>.-->
+<!---->
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>Rauks.org jeu de rôles</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Rauks.org est un jeu de rôles qui se veut à la fois accessible pour les joueurs débutants et adapté aux rolistes aguerris. Tout est fait pour rendre les règles faciles à apprendre et à utiliser afin de se concentrer sur l'essentiel : Le jeu de rôle en lui même."
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="icon" type="image/png" href="favicon.png" />
+        <!---->
+        <!--JQM : -->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"
+        />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <script src="/JS/mustache.min.js"></script>
+        <script src="/JS/rauks.js"></script>
+        <!---->
+        <!--Google analytics : -->
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-28391166-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!--/Google analytics : -->
+    </head>
+    
+    <body>
+        <div data-role="page" data-theme="c">
+            <div data-role="content">
+                <div class="navbartempl"></div>
+                <h1></h1>
+                <h1 style="font-size:3.5em;text-align: center;margin:0 auto;">Combat au corps à corps</h1>
+                <h1></h1>
+                <div style="width:87%;margin:0 auto;">
+                    <p>Pour attaquer une cible au corps à corps, il faut être à distance suffisante.</p>
+                    <p>Il faut un tour pour se rapprocher et/ou engager la cible.</p>
+                    <p>Est considéré comme engagé au corps à corps toute personne à portée d’attaque
+                        au corps à corps d’un adversaire.</p>
+                    <p>Il est possible de tenter une charge (Jet d'athlétisme) pour engager la
+                        cible et attaquer dans un même tour.</p>
+                    <p>Il est possible d’engager une cible lointaine avec un sprint (Jet d'athlétisme)</p>
+                    <p>On attaque une fois par tour en lançant les dés de blocages, le nombre
+                        de dés lancés dépend de la force des deux protagonistes. C’est toujours
+                        le protagoniste qui a le plus de force qui choisi le résultat parmi les
+                        des dés de blocages.</p>
+                    <p>On peut modifier la force d’un personnage selon la situation (Personnage
+                        au sol, personnage encerclé d’adversaire, etc …).</p>
+                    <h2>Nombre de dés de blocage lancé</h2>
+                    <table>
+                        <colgroup>
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>1D6</td>
+                                <td>Lorsque l’attaquant et le défenseur ont la même force.
+                                    <p>Exemples :</p>
+                                    <p>“Frieda (3 en force) attaque un Voyou (3 en force).”</p>
+                                    <p>“Gunther (2 en force) attaque un Voyou au sol (3 en force, 2 considérant
+                                        qu’il est au sol)”</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2D6</td>
+                                <td>Lorsque l’un des protagoniste a plus de force que l’autre
+                                    <p>Exemples :</p>
+                                    <p>“Frieda (3 en force) attaque un Chien de garde (2 en force).”</p>
+                                    <p>“Gunther (2 en force) attaque un Voyou (3 en force). Attention, c’est
+                                        le Voyou qui choisira le résultat.”</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3D6</td>
+                                <td>Lorsque l’un des protagoniste a plus du double de force que l’autre
+                                    <p>Exemples :</p>
+                                    <p>“Morgen (4 en force) attaque “Gros Rat” (1 en force).”</p>
+                                    <p>“Gunther est encerclé (2 en force, 1 car encerclé) attaque un “Garde Colossal”
+                                        (4 en force). Attention, c’est le Garde Colossal qui choisira le résultat.”</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>Effet du dé du blocage</h2>
+                    <table>
+                        <colgroup>
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>1 : Crane</td>
+                                <td>L’attaquant subi un jet de blessure</td>
+                            </tr>
+                            <tr>
+                                <td>2 : Crane/Punch</td>
+                                <td>L’attaquant et le défenseur subissent un jet de blessure. Les personnages
+                                    ayant blocage ne subissent pas la blessure.</td>
+                            </tr>
+                            <tr>
+                                <td>3 : Flèche</td>
+                                <td>Le défenseur est repoussé sur 1m, l’attaquant peut le poursuivre. Si impossible,
+                                    le défenseur subi un jet de blessure.</td>
+                            </tr>
+                            <tr>
+                                <td>4 : Flèche</td>
+                                <td>Le défenseur est repoussé sur 1m, l’attaquant peut le poursuivre. Si impossible,
+                                    le défenseur subi un jet de blessure.</td>
+                            </tr>
+                            <tr>
+                                <td>5 : Punch *!*</td>
+                                <td>Le défenseur subi un jet de blessure sauf si il a la compétence acrobatie.</td>
+                            </tr>
+                            <tr>
+                                <td>6 : Punch</td>
+                                <td>Le défenseur subi un jet de blessure.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--/text-->
+            </div>
+        </div>
+        <!--</page-->
+    </body>
+
+</html>

@@ -41,6 +41,18 @@ app.get('/rules/character', function(req, res) {
 app.get('/rules/skills', function(req, res) {
     res.sendfile(directory + "/rules/skills.html");
 });
+app.get('/rules/dices', function(req, res) {
+    res.sendfile(directory + "/rules/dices.html");
+});
+app.get('/rules/fighting', function(req, res) {
+    res.sendfile(directory + "/rules/fighting.html");
+});
+app.get('/rules/melee', function(req, res) {
+    res.sendfile(directory + "/rules/melee.html");
+});
+app.get('/rules/rerolls', function(req, res) {
+    res.sendfile(directory + "/rules/rerolls.html");
+});
 
 
 //Handle 404
