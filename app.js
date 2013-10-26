@@ -53,6 +53,15 @@ app.get('/rules/melee', function(req, res) {
 app.get('/rules/rerolls', function(req, res) {
     res.sendfile(directory + "/rules/rerolls.html");
 });
+app.get('/rules/distance', function(req, res) {
+    res.sendfile(directory + "/rules/distance.html");
+});
+app.get('/rules/damages', function(req, res) {
+    res.sendfile(directory + "/rules/damages.html");
+});
+app.get('/rules/inventory', function(req, res) {
+    res.sendfile(directory + "/rules/inventory.html");
+});
 
 
 //Handle 404
