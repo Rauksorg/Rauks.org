@@ -62,6 +62,9 @@ app.get('/rules/damages', function(req, res) {
 app.get('/rules/inventory', function(req, res) {
     res.sendfile(directory + "/rules/inventory.html");
 });
+app.get('/rules/spells', function(req, res) {
+    res.sendfile(directory + "/rules/spells.html");
+});
 
 
 //Handle 404
