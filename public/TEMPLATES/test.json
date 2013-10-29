@@ -1,0 +1,27 @@
+{
+"navbar": [
+    {"name":"Accueil", "link":"/"},
+    {"name":"Autour du jeu", "link":"/about"},
+    {"name":"Régles", "link":"/rules"},
+    {"name":"Matériels", "link":"/material"},
+    {"name":"Univers", "link":"/world"},
+    {"name":"Scénarios", "link":"/adventure"},
+    {"name":"Boutique", "link":"/shop"}
+    ],
+"title":"Rauks.org jeu de rôles Electropunk",
+"description":"heyhey",
+"content":"<br><br><br>Vous serez un Rauks, un mercenaire avec une liberté extrême dans la réalisation de ses missions.
+<br>Plongé dans un monde dominé par un empire bureaucratique prônant l’égalité
+entre deux races du genre homo : les hommes et les orcs. Un monde que l’électronique
+a révolutionné, sans pour autant connaître de révolution industrielle.
+<br>
+<br>Rauks.org se veut à la fois accessible pour les joueurs débutants et adapté
+aux rolistes aguerris. Tout est fait pour rendre les règles faciles à apprendre
+et à utiliser afin de se concentrer sur l'essentiel : Le jeu de rôle en
+lui même.",
+"img":{
+    "path":"/IMG/COUCHE_DE_SOLEIL.png",
+    "title":"Couché de soleil",
+    "alt":"Couché de soleil sur le desert."
+    }
+}

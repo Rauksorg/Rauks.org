@@ -55,10 +55,8 @@ by-->
         <div data-role="page" data-theme="c">
             <div data-role="content">
                 <div class="navbartempl"></div>
-                <h1></h1>
-                <h1 style="font-size:3.5em;text-align: center;margin:0 auto;">Combat au corps à corps</h1>
-                <h1></h1>
-                <div style="width:87%;margin:0 auto;">
+                <h1 style="font-size:3.5em;text-align: center;margin:auto;">Combat au corps à corps</h1>
+                <div style="width:87%;margin:auto;">
                     <p>Pour attaquer une cible au corps à corps, il faut être à distance suffisante.</p>
                     <p>Il faut un tour pour se rapprocher et/ou engager la cible.</p>
                     <p>Est considéré comme engagé au corps à corps toute personne à portée d’attaque
@@ -72,72 +70,86 @@ by-->
                         des dés de blocages.</p>
                     <p>On peut modifier la force d’un personnage selon la situation (Personnage
                         au sol, personnage encerclé d’adversaire, etc …).</p>
-                    <h2>Nombre de dés de blocage lancé</h2>
-                    <table>
-                        <colgroup>
-                            <col>
-                        </colgroup>
+                    <h2>Nombre de dés de blocage lancés</h2>
+                    <table data-role="table" data-mode="reflow" class="ui-responsive table-stroke">
+                       <thead>
+                           <th>Dés</th>
+                            <th>Condition</th>
+                            <th>Exemples</th>
+                       </thead>
                         <tbody>
                             <tr>
-                                <td>1D6</td>
-                                <td>Lorsque l’attaquant et le défenseur ont la même force.
-                                    <p>Exemples :</p>
-                                    <p>“Frieda (3 en force) attaque un Voyou (3 en force).”</p>
-                                    <p>“Gunther (2 en force) attaque un Voyou au sol (3 en force, 2 considérant
-                                        qu’il est au sol)”</p>
+                                <th>1D6</th>
+                                <td>Lorsque l’attaquant et le défenseur ont la même force.</td>
+                                <td>
+                                    “Frieda (3 en force) attaque un Voyou (3 en force).”<br>
+                                    “Gunther (2 en force) attaque un Voyou au sol (3 en force, 2 considérant
+                                        qu’il est au sol)”
                                 </td>
                             </tr>
                             <tr>
-                                <td>2D6</td>
-                                <td>Lorsque l’un des protagoniste a plus de force que l’autre
-                                    <p>Exemples :</p>
-                                    <p>“Frieda (3 en force) attaque un Chien de garde (2 en force).”</p>
-                                    <p>“Gunther (2 en force) attaque un Voyou (3 en force). Attention, c’est
-                                        le Voyou qui choisira le résultat.”</p>
+                               <th>2D6</th>
+                                <td>Lorsque l’un des protagoniste a plus de force que l’autre<br></td>
+                                    <td>
+                                    “Frieda (3 en force) attaque un Chien de garde (2 en force).”<br>
+                                    “Gunther (2 en force) attaque un Voyou (3 en force). Attention, c’est
+                                        le Voyou qui choisira le résultat.”
                                 </td>
                             </tr>
                             <tr>
-                                <td>3D6</td>
-                                <td>Lorsque l’un des protagoniste a plus du double de force que l’autre
-                                    <p>Exemples :</p>
-                                    <p>“Morgen (4 en force) attaque “Gros Rat” (1 en force).”</p>
-                                    <p>“Gunther est encerclé (2 en force, 1 car encerclé) attaque un “Garde Colossal”
-                                        (4 en force). Attention, c’est le Garde Colossal qui choisira le résultat.”</p>
+                                <th>3D6</th>
+                                <td>Lorsque l’un des protagoniste a plus du double de force que l’autre<br></td>
+                                   <td> 
+                                    “Morgen (4 en force) attaque “Gros Rat” (1 en force).”<br>
+                                    “Gunther est encerclé (2 en force, 1 car encerclé) attaque un “Garde Colossal”
+                                        (4 en force). Attention, c’est le Garde Colossal qui choisira le résultat.”
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <h2>Effet du dé du blocage</h2>
-                    <table>
-                        <colgroup>
-                            <col>
-                        </colgroup>
+                    <table data-role="table" data-mode="reflow" class="ui-responsive table-stroke">
+                       <thead>
+                       <th></th>
+                       <th></th>
+                       <th></th>
+                       </thead>
                         <tbody>
                             <tr>
-                                <td>1 : Crane</td>
+                                <th>1</th>
+                                <td>Crane</td>
                                 <td>L’attaquant subi un jet de blessure</td>
                             </tr>
                             <tr>
-                                <td>2 : Crane/Punch</td>
+                                <th>2</th>
+                                <td>Crane/Punch</td>
                                 <td>L’attaquant et le défenseur subissent un jet de blessure. Les personnages
                                     ayant blocage ne subissent pas la blessure.</td>
                             </tr>
                             <tr>
-                                <td>3 : Flèche</td>
+                                                            <th>3</th>
+
+                                <td>Flèche</td>
                                 <td>Le défenseur est repoussé sur 1m, l’attaquant peut le poursuivre. Si impossible,
                                     le défenseur subi un jet de blessure.</td>
                             </tr>
                             <tr>
-                                <td>4 : Flèche</td>
+                                <th>4</th>
+                                                                <td>Flèche</td>
+
                                 <td>Le défenseur est repoussé sur 1m, l’attaquant peut le poursuivre. Si impossible,
                                     le défenseur subi un jet de blessure.</td>
                             </tr>
                             <tr>
-                                <td>5 : Punch *!*</td>
+                                                            <th>5</th>
+
+                                <td>Punch *!*</td>
                                 <td>Le défenseur subi un jet de blessure sauf si il a la compétence acrobatie.</td>
                             </tr>
                             <tr>
-                                <td>6 : Punch</td>
+                                <th>6</th>
+                                                                <td>Punch</td>
+
                                 <td>Le défenseur subi un jet de blessure.</td>
                             </tr>
                         </tbody>

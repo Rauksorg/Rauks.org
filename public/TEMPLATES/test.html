@@ -19,9 +19,9 @@ by-->
 <html>
     
     <head>
-        <title>Rauks.org jeu de rôles</title>
+        <title>{{title}}</title>
         <meta charset="utf-8">
-        <meta name="description" content="Rauks.org est un jeu de rôles qui se veut à la fois accessible pour les joueurs débutants et adapté aux rolistes aguerris. Tout est fait pour rendre les règles faciles à apprendre et à utiliser afin de se concentrer sur l'essentiel : Le jeu de rôle en lui même."
+        <meta name="description" content={{description}}>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <link rel="icon" type="image/png" href="favicon.png" />
         <!---->
@@ -54,24 +54,21 @@ by-->
     <body>
         <div data-role="page" data-theme="c">
             <div data-role="content">
-                <a href="https://github.com/Tetraib/Rauks.org" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
-                <div class="navbartempl"></div>
-                <h1 style="font-size:3.5em;text-align: center;">Rauks.org jeu de rôles Electropunk</h1>
+                            <a href="https://github.com/Tetraib/Rauks.org" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+                <div data-role="controlgroup" data-type="horizontal" data-mini="true"
+                style="text-align: center; margin:0 auto;">
+                {{#navbar}}
+                    <a href={{link}} data-role="button">{{name}}</a>
+                {{/navbar}}
+                </div>
+                <h1 style="font-size:3.5em;text-align: center;">{{Title}}</h1>
                 <p style="width:50%; text-align:justify; margin:auto;">
-                    <img src="IMG/COUCHE_DE_SOLEIL.png" TITLE="Couché de soleil" alt="Couché de soleil sur le desert."
-                    height="290" width="206" style="float:left;margin-right:1em;"><br><br><br>Vous serez un Rauks, un mercenaire avec une liberté extrême dans la réalisation
-                    de ses missions.
-                    <br>Plongé dans un monde dominé par un empire bureaucratique prônant l’égalité
-                    entre deux races du genre homo : les hommes et les orcs. Un monde que l’électronique
-                    a révolutionné, sans pour autant connaître de révolution industrielle.
-                    <br>
-                    <br>Rauks.org se veut à la fois accessible pour les joueurs débutants et adapté
-                    aux rolistes aguerris. Tout est fait pour rendre les règles faciles à apprendre
-                    et à utiliser afin de se concentrer sur l'essentiel : Le jeu de rôle en
-                    lui même.</p>
+                <img src={{img.path}} title={{img.title}} alt={{img.alt}}
+                    height="300" width="200" style="float:left;margin-right:1em;">
+                {{&content}}
+                </p>
             </div>
+            <!--/content-->
         </div>
         <!--</page-->
     </body>
-
-</html>
