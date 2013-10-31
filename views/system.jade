@@ -1,0 +1,26 @@
+include header.jade
+    div(style='width: 50%; margin: auto; text-align: center;')
+        ul(data-role='listview', data-inset='true', data-filter='true', data-filter-placeholder='Rechercher une régle...', data-filter-theme='c', data-divider-theme='c')
+            li(data-role='list-divider') Personnages
+            li
+              a(href='/rules/character') Création de personnage
+            li
+              a(href='/rules/skills') Compétences
+            li
+              a(href='/rules/spells') Sorts
+            li
+              a(href='/rules/inventory') Armure et inventaire
+            li(data-role='list-divider') Jeux
+            li
+              a(href='/rules/dices') Jets de dés
+            li
+              a(href='/rules/rerolls') Relances
+            li(data-role='list-divider') Combats
+            li
+              a(href='/rules/fighting') Système de combat
+            li
+              a(href='/rules/melee') Combat au corps à corps
+            li
+              a(href='/rules/distance') Combat à distance
+            li
+              a(href='/rules/damages') Dégats

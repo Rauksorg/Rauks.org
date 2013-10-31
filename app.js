@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-// "use strict";
+
 var directory = __dirname + '/public';
 var express = require("express"),
     app = express(),
@@ -27,13 +27,13 @@ server.listen(process.env.PORT, process.env.IP);
 // 
 // Routeur :
 app.get('/', function(req, res) {
-    res.render("home.jade",{"title":"Rauks.org jeu de rôles"});
+    res.render("home.jade", {"title":"Rauks.org jeu de rôles"});
 });
 app.get('/about', function(req, res) {
-    res.sendfile(directory + "/about.html");
+    res.render("about.jade", {"title":"Autour du jeu de rôles Rauks.org"});
 });
-app.get('/rules', function(req, res) {
-    res.sendfile(directory + "/rules.html");
+app.get('/system', function(req, res) {
+    res.render("system.jade", {"title":"Système du jeu de rôles Rauks.org"});
 });
 // Rules routeur
 app.get('/rules/character', function(req, res) {
