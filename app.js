@@ -33,38 +33,38 @@ app.get('/about', function(req, res) {
     res.render("about.jade", {"title":"Autour du jeu de rôles Rauks.org"});
 });
 app.get('/system', function(req, res) {
-    res.render("system.jade", {"title":"Système du jeu de rôles Rauks.org"});
+    res.render("systemindex.jade", {"title":"Système du jeu de rôles Rauks.org"});
 });
-// Rules routeur
-app.get('/rules/character', function(req, res) {
-    res.sendfile(directory + "/rules/character.html");
+// system routeur
+app.get('/system/character', function(req, res) {
+    res.render("systemtemplate.jade",{"title":"Création d’un personnage","text":"<h1></h1><h2>Choix de la civilité</h2><p>Il faut commencer par déterminer la race et l'ethnie d’un personnage, ainsi que son nom et son sexe. De base, un personnage est un commun.</p><p>Les personnages sont également des méta-humain ayant conscience de leur état.</p><h2>Choix des caractéristiques</h2><p>Il faut répartir 18 points dans les 6 caractéristiques du personnage :</p><ul><li><p>Le physique</p></li><li><p>La perception</p></li><li><p>L’intelligence</p></li><li><p>Le charisme</p></li><li><p>Le corps à corps</p></li><li><p>Les relances</p></li></ul><p>Chaque caractéristique peut aller de 2 à 4. </p><p>2 représente un personnage faible, 3 un personnage normal, 4 un personnage fort.</p><h2>Détermination des scores</h2><p>La détermination des scores est simple :</p><ul><li><p>La vitesse est fixée à 5 étant donné qu’il est un humanoïde</p></li><li><p>Son armure est fixée à 7 étant donné qu’il est un humanoïde</p></li><li><p>Le nombre réel de ses relances est déterminé par “Relance multiplié par 3”</p></li></ul><h2>Choix des compétences</h2><p>Le Joueur choisi les 5 compétences de son personnage. Ces compétences facilitent des jet de dés ou en rend possible d’autres.</p><h2>Choix du sort</h2><p>Le MJ propose un sort qui soit utile et cohérent avec le personnage créé. Pour aider le MJ dans son choix, le joueur peut décrire son personnage et la façon dont il se l’imagine</p><h2>Attribution de l’équipement</h2><p>Le MJ donne un peu d’équipement au personnage, en accord avec ses compétences.</p><p>Les personnages peuvent un nombre différente d’objet en fonction de l’armure qu’ils ont sur eux en plus d’objets qu’ils pourraient porter avec leurs bras.</p><h2>Évolution du personnage</h2><p>Les caractéristiques, compétences et sorts du personnages sont définis au début du jeu et n’ont pas vocation à évoluer. Certains réajustements peuvent éventuellement être fait en accord avec le MJ, si une compétence ne représente plus vraiment le personnage tel qu’il a évolué afin de la remplacer vers une autre plus adapté.</p><br><p>Le personnage va cependant évoluer de deux manières :</p><ul><li><p>Ses possessions sont susceptibles d’évoluer, son équipement mais également les propriétés immobilières qu’il pourrait finir par acquérir</p></li><li><p>La principale évolution reste l’évolution sociale du personnage. Se faire des alliés, des ennemis, gagner un meilleur statut, voilà également la plus grande possibilité d’évolution et la meilleur manière de symboliser le vécu du personnage.</p></li></ul>"});
 });
-app.get('/rules/skills', function(req, res) {
-    res.sendfile(directory + "/rules/skills.html");
+app.get('/system/skills', function(req, res) {
+    res.sendfile(directory + "/system/skills.html");
 });
-app.get('/rules/dices', function(req, res) {
-    res.sendfile(directory + "/rules/dices.html");
+app.get('/system/dices', function(req, res) {
+    res.sendfile(directory + "/system/dices.html");
 });
-app.get('/rules/fighting', function(req, res) {
-    res.sendfile(directory + "/rules/fighting.html");
+app.get('/system/fighting', function(req, res) {
+    res.sendfile(directory + "/system/fighting.html");
 });
-app.get('/rules/melee', function(req, res) {
-    res.sendfile(directory + "/rules/melee.html");
+app.get('/system/melee', function(req, res) {
+    res.sendfile(directory + "/system/melee.html");
 });
-app.get('/rules/rerolls', function(req, res) {
-    res.sendfile(directory + "/rules/rerolls.html");
+app.get('/system/rerolls', function(req, res) {
+    res.sendfile(directory + "/system/rerolls.html");
 });
-app.get('/rules/distance', function(req, res) {
-    res.sendfile(directory + "/rules/distance.html");
+app.get('/system/distance', function(req, res) {
+    res.sendfile(directory + "/system/distance.html");
 });
-app.get('/rules/damages', function(req, res) {
-    res.sendfile(directory + "/rules/damages.html");
+app.get('/system/damages', function(req, res) {
+    res.sendfile(directory + "/system/damages.html");
 });
-app.get('/rules/inventory', function(req, res) {
-    res.sendfile(directory + "/rules/inventory.html");
+app.get('/system/inventory', function(req, res) {
+    res.sendfile(directory + "/system/inventory.html");
 });
-app.get('/rules/spells', function(req, res) {
-    res.sendfile(directory + "/rules/spells.html");
+app.get('/system/spells', function(req, res) {
+    res.sendfile(directory + "/system/spells.html");
 });
 
 
