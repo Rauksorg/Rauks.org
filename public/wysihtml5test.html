@@ -27,6 +27,10 @@
                         <fieldset data-role="controlgroup" data-type="horizontal">
                             <a data-wysihtml5-command="bold">bold</a>
                             <a data-wysihtml5-command="italic">italic</a>
+                            <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="red">red</a>
+                            <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="green">green</a>
+                            <a data-wysihtml5-command="foreColor" data-wysihtml5-command-value="blue">blue</a>
+                            <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">heading 2</a>
                             <a data-wysihtml5-command="createLink">insert link</a>
                             <a data-wysihtml5-command="insertHTML" data-wysihtml5-command-value="<select id='sc-tag2 '> <option>. . .</option> <option>Orcanoir</option> <option>Background</option> </select>">insert quote</a>
                         </fieldset>
@@ -55,7 +59,8 @@
         <script>
             var editor = new wysihtml5.Editor("wysihtml5-textarea", { // id of textarea element
                 toolbar: "wysihtml5-toolbar", // id of toolbar element
-                parserRules: wysihtml5ParserRules // defined in parser rules set 
+                parserRules: wysihtml5ParserRules, // defined in parser rules set
+                stylesheets: ["/css/editor.css"]
             });
             editor.on('load', function() {
                 // The wysiwyg editor is in the DOM. It's safe to make the plugin call
