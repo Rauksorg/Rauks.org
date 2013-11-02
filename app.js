@@ -64,7 +64,7 @@ db.once('open', function callback() {
     
     // system routeur
     app.get('/system', function(req, res) {
-        var system_name = req.query.name;
+        var system_name = req.query.n;
         system.findOne({
             name: system_name
 
