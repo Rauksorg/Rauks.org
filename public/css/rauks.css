@@ -1,11 +1,6 @@
-/*.imgshadow{*/
-/*    box-shadow: 2px 2px 3px #555;*/
-/*}*/
-.imgshadow
-{
+ .polaroid {
     background: white;
-	margin: 0 15px 30px;
-	padding: 10px 10px 35px;
-	box-shadow: 0 4px 6px rgba(0,0,0,.3);
-	transition: all .15s linear;
+    margin: 0 15px 15px;
+    padding: 10px 10px 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
 }
