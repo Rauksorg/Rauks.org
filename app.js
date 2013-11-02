@@ -44,7 +44,6 @@ db.once('open', function callback() {
     // db driven routeur
     app.get('/system', function(req, res) {
         var system_name = req.query.n;
-        console.log(system_name);
         if (system_name === undefined) {
             res.render("system_list.jade", {
                 "pagetitle": "Système du jeu de rôles Rauks.org",
