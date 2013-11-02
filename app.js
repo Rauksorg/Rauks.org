@@ -45,7 +45,7 @@ db.once('open', function callback() {
     // Routeur :
     app.get('/', function(req, res) {
         res.render("home.jade", {
-            "pagetitle": "Rauks.org jeu de rôles",
+            "pagetitle": "Rauks.org jeu de rôles Electropunk",
             "title": "Rauks.org jeu de rôles Electropunk"
         });
     });
