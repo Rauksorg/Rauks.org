@@ -8,67 +8,80 @@
 
 <url>
   <loc>http://www.rauks.org/</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/about</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://www.rauks.org/system_index</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <loc>http://www.rauks.org/system</loc>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=character</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=skills</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=spells</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=inventory</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=dices</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=rerolls</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=fighting</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=melee</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=distance</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.rauks.org/system/?n=damages</loc>
-  <lastmod>2013-11-02T01:28:35+00:00</lastmod>
+  <lastmod>2013-11-02T02:31:35+00:00</lastmod>
   <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
 </url>
 </urlset>
