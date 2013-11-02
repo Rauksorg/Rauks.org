@@ -76,7 +76,7 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
     res.render("about.jade", {
         "pagetitle": "Autour du jeu de rôles Rauks.org",
-        "title": "Autour du jeu"
+        "title": "Pourquoi nous avons développé Rauks.org ?"
     });
 });
 //Handle 404

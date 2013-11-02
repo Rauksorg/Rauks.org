@@ -1,7 +1,7 @@
 include header.jade
-    div(style='width: 50%; margin: auto; text-align: center;')
+    div.paragraphe
         ul(data-role='listview', data-inset='true', data-filter='true', data-filter-placeholder='Rechercher une régle...', data-filter-theme='c', data-divider-theme='c')
-            li(data-role='list-divider') Personnages
+            li.centering(data-role='list-divider') Personnages
             li
               a(href='/system/?n=character') Création de personnage
             li
@@ -10,12 +10,12 @@ include header.jade
               a(href='/system/?n=spells') Sorts
             li
               a(href='/system/?n=inventory') Armure et inventaire
-            li(data-role='list-divider') Jeux
+            li.centering(data-role='list-divider') Jeux
             li
               a(href='/system/?n=dices') Jets de dés
             li
               a(href='/system/?n=rerolls') Relances
-            li(data-role='list-divider') Combats
+            li.centering(data-role='list-divider') Combats
             li
               a(href='/system/?n=fighting') Système de combat
             li
@@ -25,5 +25,5 @@ include header.jade
             li
               a(href='/system/?n=damages') Dégats
 
-    div(style="text-align: center;")
+    div.centering
         a(href='http://www.flickr.com/photos/97936203@N04/10583718156/', title='WALL de Tetraib, sur Flickr'): img.polaroid(src='http://farm4.staticflickr.com/3690/10583718156_47daa02c40_b.jpg', width='1024', height='469', alt='WALL')
