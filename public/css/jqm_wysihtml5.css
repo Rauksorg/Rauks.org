@@ -1,3 +1,13 @@
 .wysihtml5-command-active {
     background-color:blue;
 }
+
+.wysiwyg-color-red {
+    color: red;
+}
+.wysiwyg-color-green {
+    color: green;
+}
+.wysiwyg-color-blue {
+    color: blue;
+}

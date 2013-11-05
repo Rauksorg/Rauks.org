@@ -1,0 +1,23 @@
+include header.jade
+    block append content    
+    div(style='width: 87%; margin: auto;')
+    
+    #wysihtml5-toolbar(style='display: none;')
+    fieldset(data-role='controlgroup', data-type='horizontal')
+        button(data-role='button', data-wysihtml5-command='formatBlock', data-wysihtml5-command-value='h2') Titre
+        button(data-role='button', data-wysihtml5-command='bold')
+          b g
+        button(data-role='button', data-wysihtml5-command='italic')
+          i i
+        button(data-role='button', data-wysihtml5-command='createLink')
+          u lien
+        button(data-role='button', data-wysihtml5-action='change_view') &lt;/&gt;
+      div(data-wysihtml5-dialog='createLink', style='display: none;')
+        label
+          | Link:
+          input.text(data-wysihtml5-dialog-field='href', value='http://')
+        a(data-role='button', data-wysihtml5-dialog-action='save') OK
+        a(data-role='button', data-wysihtml5-dialog-action='cancel') Cancel
+    //
+    //
+    textarea#wysihtml5-textarea(style='height: 500px; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;')!= text

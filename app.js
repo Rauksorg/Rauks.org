@@ -60,11 +60,38 @@ db.once('open', function callback() {
                     res.send(404, 'Sorry cant find that!');
                 }
                 else {
-                    res.render("system_template.jade", foundname);
+                    // foundnam render page title, title and text
+                    res.render("system_page.jade", foundname);
                 }
             });
         }
     });
+    app.get('/admin', function(req, res) {
+        var system_name = req.query.n;
+        if (system_name === undefined) {
+            res.render("admin_list.jade", {
+                "pagetitle": "Administration",
+                "title": "Page d'administration"
+            });
+        }
+        else {
+            system.findOne({
+                name: system_name
+
+            }, function(err, foundname) {
+                if (err) console.log("name query error");
+                if (foundname === null) {
+                    res.send(404, 'Sorry cant find that!');
+                }
+                else {
+                    var savetitle = foundname.title;
+                    foundname.title="Administration";
+                    res.render("admin_page.jade", foundname);
+                }
+            });
+        }
+    });
+    
 });
 // Routeur :
 app.get('/', function(req, res) {
