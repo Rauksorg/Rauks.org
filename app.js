@@ -29,7 +29,6 @@ mongoose.connect("mongodb://test:test@dharma.mongohq.com:10009/app17028231");
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
 db.once('open', function callback() {
-
     //Mongoose schema
     var systemSchema = mongoose.Schema({
         name: String,
