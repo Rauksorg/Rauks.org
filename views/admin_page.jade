@@ -1,6 +1,6 @@
 extends header.jade
-block content  
-    div(style='width: 87%; margin: auto;')
-        form(method="post")
+block content
+    form(method="post")
+        h1.centering.maintitle.edit=title
+        div(style='width: 87%; margin: auto;')
             div.edit!= text
-    script(src='/js/rauks.js')

@@ -83,8 +83,6 @@ db.once('open', function callback() {
                     res.send(404, 'Sorry cant find that!');
                 }
                 else {
-                    var savetitle = foundname.title;
-                    foundname.title="Administration";
                     res.render("admin_page.jade", foundname);
                 }
             });

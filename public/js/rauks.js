@@ -18,6 +18,12 @@ along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 
 $(document).on("pageinit", function() {
     tinymce.init({
+    selector: "h1.edit",
+    inline: true,
+    toolbar: "undo redo",
+    menubar: false
+});
+    tinymce.init({
         selector: "div.edit",
         inline: true,
         plugins: [
@@ -25,8 +31,7 @@ $(document).on("pageinit", function() {
         "searchreplace wordcount visualblocks visualchars code fullscreen",
         "insertdatetime media nonbreaking save table contextmenu directionality"
     ],
-    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons",
+    toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media",
     image_advtab: true,
     });
-    console.log("hello");
 });
