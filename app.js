@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
 if (process.env.C9_PROJECT) {
-    require('./db_url.js');
+    require('./private.js');
 }
 var express = require("express"),
     app = express();
