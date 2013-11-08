@@ -15,7 +15,9 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-
+if (process.env.C9_PROJECT) {
+    require('./db_url.js');
+}
 var express = require("express"),
     app = express();
 app.configure(function() {
@@ -25,7 +27,7 @@ app.listen(process.env.PORT, process.env.IP);
 
 //start moongoose
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://test:test@dharma.mongohq.com:10009/app17028231");
+mongoose.connect(process.env.MONGOHQ_URL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
 db.once('open', function callback() {
