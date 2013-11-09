@@ -2,30 +2,10 @@ extends header.jade
 block content
     h1.centering.maintitle=title
     div.paragraphe
-        ul(data-role='listview', data-inset='true', data-filter='true', data-filter-placeholder='Rechercher une régle...', data-filter-theme='c', data-divider-theme='c')
-            li.centering(data-role='list-divider') Personnages
-            li
-              a(href='/system?n=character') Création de personnage
-            li
-              a(href='/system?n=skills') Compétences
-            li
-              a(href='/system?n=spells') Sorts
-            li
-              a(href='/system?n=inventory') Armure et inventaire
-            li.centering(data-role='list-divider') Jeux
-            li
-              a(href='/system?n=dices') Jets de dés
-            li
-              a(href='/system?n=rerolls') Relances
-            li.centering(data-role='list-divider') Combats
-            li
-              a(href='/system?n=fighting') Système de combat
-            li
-              a(href='/system?n=melee') Combat au corps à corps
-            li
-              a(href='/system?n=distance') Combat à distance
-            li
-              a(href='/system?n=damages') Dégats
+        ul(data-role='listview', data-inset='true', data-divider-theme='c')
+            each val, index in foundarticle
+                li
+                    a(href='/system?n='+ foundarticle[index].name)= foundarticle[index].title
 
     div.centering
         a(href='http://www.flickr.com/photos/97936203@N04/10583718156/', title='WALL de Tetraib, sur Flickr'): img.polaroid(src='http://farm4.staticflickr.com/3690/10583718156_47daa02c40_b.jpg', width='1024', height='469', alt='WALL')

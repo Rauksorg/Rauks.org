@@ -1,17 +1,17 @@
 /*
 Copyright 2013 Thibaut CONSTANT
 This file is part of Rauks.org.
- 
+
 Rauks.org is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
- 
+
 Rauks.org is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
- 
+
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -24,7 +24,6 @@ app.configure(function() {
     app.use(express.static(__dirname + '/public'));
 });
 app.listen(process.env.PORT, process.env.IP);
-
 //start moongoose
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
@@ -38,29 +37,31 @@ db.once('open', function callback() {
         title: String,
         text: String
     });
-
     // Mongoose model
     var system = mongoose.model('system', systemSchema);
-
     // db driven routeur
     app.get('/system', function(req, res) {
         var system_name = req.query.n;
         if (system_name === undefined) {
-            res.render("system_list.jade", {
-                "pagetitle": "Système du jeu de rôles Rauks.org",
-                "title": "Système de jeu"
+            system.find({}, {
+                title: 1,
+                name: 1,
+                _id: 0
+            }, function(err, foundarticle) {
+                res.render("system_list.jade", {
+                    "foundarticle": foundarticle,
+                    "title": "Système de jeu",
+                    "pagetitle": "Système de jeu"
+                });
             });
-        }
-        else {
+        } else {
             system.findOne({
                 name: system_name
-
             }, function(err, foundname) {
                 if (err) console.log("name query error");
                 if (foundname === null) {
                     res.send(404, 'Sorry cant find that!');
-                }
-                else {
+                } else {
                     // foundnam render page title, title and text
                     res.render("system_page.jade", foundname);
                 }
@@ -70,27 +71,30 @@ db.once('open', function callback() {
     app.get('/admin', function(req, res) {
         var system_name = req.query.n;
         if (system_name === undefined) {
-            res.render("admin_list.jade", {
-                "pagetitle": "Administration",
-                "title": "Page d'administration"
+             system.find({}, {
+                title: 1,
+                name: 1,
+                _id: 0
+            }, function(err, foundarticle) {
+                res.render("admin_list.jade", {
+                    "foundarticle": foundarticle,
+                    "title": "Administration",
+                    "pagetitle": "Administration"
+                });
             });
-        }
-        else {
+        } else {
             system.findOne({
                 name: system_name
-
             }, function(err, foundname) {
                 if (err) console.log("name query error");
                 if (foundname === null) {
                     res.send(404, 'Sorry cant find that!');
-                }
-                else {
+                } else {
                     res.render("admin_page.jade", foundname);
                 }
             });
         }
     });
-    
 });
 // Routeur :
 app.get('/', function(req, res) {
