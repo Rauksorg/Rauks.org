@@ -1,16 +1,16 @@
 //    Copyright 2013 Thibaut CONSTANT
 //    This file is part of Rauks.org.
-//    
+//
 //    Rauks.org is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
 //    the Free Software Foundation, either version 3 of the License, or
 //    (at your option) any later version.
-// 
+//
 //    Rauks.org is distributed in the hope that it will be useful,
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //    GNU General Public License for more details.
-// 
+//
 //    You should have received a copy of the GNU General Public License
 //    along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 
@@ -29,23 +29,18 @@ html(lang="fr")
         script(src="//tinymce.cachefly.net/4.0/tinymce.min.js")
         script(src='/js/rauks.js')
 
-  
-        script(type="text/javascript").
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-28391166-1']);
-            _gaq.push(['_trackPageview']);
-            (function() {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-            })();
+
+        script
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-28391166-1', 'rauks.org');
+            ga('send', 'pageview');
     body
         div(data-role='page', data-theme='c')
-            
-            div(data-role="header", data-theme='c',data-position="fixed",data-tap-toggle="false")
+
+            div#header(data-role="header", data-theme='c',data-position="fixed",data-tap-toggle="false")
                 div(data-role='controlgroup', data-type='horizontal', data-mini='true', style='text-align: center;')
                     a(href='/', data-role='button') Accueil
                     a(href='/about', data-role='button') Autour du jeu
