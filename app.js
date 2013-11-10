@@ -53,7 +53,7 @@ db.once('open', function callback() {
                 name: 1,
                 _id: 0
             }, function (err, foundarticle) {
-                res.render("system_list.jade", {
+                res.render("article_list.jade", {
                     "foundarticle": foundarticle,
                     "title": "Système de jeu",
                     "pagetitle": "Système de jeu"
@@ -68,7 +68,7 @@ db.once('open', function callback() {
                     res.send(404, 'Sorry cant find that!');
                 } else {
                     // foundnam render page title, title and text
-                    res.render("system_page.jade", foundname);
+                    res.render("article_page.jade", foundname);
                 }
             });
         }

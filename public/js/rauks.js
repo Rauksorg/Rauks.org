@@ -18,6 +18,7 @@ along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 $(document).bind("pageinit", function () {
 
     $("#savebutton").bind("click", function () {
+        // var articleid come from jade template
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -30,6 +31,10 @@ $(document).bind("pageinit", function () {
             }
         });
     });
+
+     $("#updatebutton").bind("click", function () {
+         $(".textedit").trigger( "create" );
+     });
     tinymce.init({
         selector: "div.textedit",
         inline: true,
@@ -38,4 +43,5 @@ $(document).bind("pageinit", function () {
         fixed_toolbar_container: "#header",
         menubar: false
     });
+
 });
