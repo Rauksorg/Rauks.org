@@ -26,26 +26,29 @@ app.configure(function () {
 });
 app.use('/admin',express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_PSWD));
 app.listen(process.env.PORT, process.env.IP);
+//article_route
+
 //start moongoose
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
 //Mongoose schema
-var systemSchema = mongoose.Schema({
+var articleSchema = mongoose.Schema({
     name: String,
     pagetitle: String,
     title: String,
     text: String
 });
 // Mongoose model
-var system = mongoose.model('system', systemSchema);
+var article = mongoose.model('article', articleSchema);
 db.once('open', function callback() {
     // db driven routeur
-    app.get('/system', function (req, res) {
+
+ app.get('/system', function (req, res) {
         var system_name = req.query.n;
         if (system_name === undefined) {
-            system.find({}, {
+            article.find({}, {
                 title: 1,
                 name: 1,
                 _id: 0
@@ -57,7 +60,7 @@ db.once('open', function callback() {
                 });
             });
         } else {
-            system.findOne({
+            article.findOne({
                 name: system_name
             }, function (err, foundname) {
                 if (err) console.log("name query error");
@@ -70,13 +73,13 @@ db.once('open', function callback() {
             });
         }
     });
-    app.get('/admin', function (req, res) {
+app.get('/admin', function (req, res) {
         //Register the get parameter
         var system_name = req.query.n;
         //If the page is the root of system
         if (system_name === undefined) {
             //Find the list of the articles
-            system.find({}, {
+            article.find({}, {
                 title: 1,
                 name: 1,
                 _id: 0
@@ -89,7 +92,7 @@ db.once('open', function callback() {
             });
         } else {
             //Find the article
-            system.findOne({
+            article.findOne({
                 name: system_name
             }, function (err, foundname) {
                 if (err) console.log("name query error");
@@ -104,7 +107,7 @@ db.once('open', function callback() {
         }
     });
     app.post('/admin/ajax', function (req, res) {
-        system.update({
+        article.update({
             _id: req.body._id
         }, {
             $set: {
