@@ -2,4 +2,7 @@ extends header.jade
 block content
     h1.centering.maintitle.edit=title
     div.paragraphe_xlarge
-        div.edit!= text
+        div.textedit!= text
+        button#savebutton Enregistrer
+    script.
+        var articleid = "#{_id}"

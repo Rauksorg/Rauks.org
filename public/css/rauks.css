@@ -30,7 +30,6 @@
      margin:0 auto;
      margin-bottom:25px;
  }
- #mce_20{
-     text-align:center;
-     margin:0 auto;
+ .mce-tinymce{
+     margin:0 auto !important;
  }

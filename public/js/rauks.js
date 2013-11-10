@@ -15,15 +15,23 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-$(document).on("pageinit", function () {
-    tinymce.init({
-        selector: "h1.edit",
-        inline: true,
-        toolbar: "undo redo",
-        menubar: false
+$(document).bind("pageinit", function () {
+
+    $("#savebutton").bind("click", function () {
+        $.ajax({
+            url: '/admin/ajax',
+            type: 'POST',
+            data: JSON.stringify({"_id":articleid,"text":$('.textedit').html()}),
+            contentType: 'application/json',
+            success: function (response) {
+            },
+            error: function () {
+                alert("Erreur dans l'envoi du texte");
+            }
+        });
     });
     tinymce.init({
-        selector: "div.edit",
+        selector: "div.textedit",
         inline: true,
         plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality charmap",
         toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist outdent indent | table link image charmap media | code",

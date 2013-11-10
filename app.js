@@ -20,34 +20,36 @@ if (process.env.C9_PROJECT) {
 }
 var express = require("express"),
     app = express();
-app.configure(function() {
+app.configure(function () {
     app.use(express.static(__dirname + '/public'));
+    app.use(express.bodyParser());
 });
+app.use('/admin',express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_PSWD));
 app.listen(process.env.PORT, process.env.IP);
 //start moongoose
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
+//Mongoose schema
+var systemSchema = mongoose.Schema({
+    name: String,
+    pagetitle: String,
+    title: String,
+    text: String
+});
+// Mongoose model
+var system = mongoose.model('system', systemSchema);
 db.once('open', function callback() {
-    //Mongoose schema
-    var systemSchema = mongoose.Schema({
-        name: String,
-        pagetitle: String,
-        title: String,
-        text: String
-    });
-    // Mongoose model
-    var system = mongoose.model('system', systemSchema);
     // db driven routeur
-    app.get('/system', function(req, res) {
+    app.get('/system', function (req, res) {
         var system_name = req.query.n;
         if (system_name === undefined) {
             system.find({}, {
                 title: 1,
                 name: 1,
                 _id: 0
-            }, function(err, foundarticle) {
+            }, function (err, foundarticle) {
                 res.render("system_list.jade", {
                     "foundarticle": foundarticle,
                     "title": "Système de jeu",
@@ -57,7 +59,7 @@ db.once('open', function callback() {
         } else {
             system.findOne({
                 name: system_name
-            }, function(err, foundname) {
+            }, function (err, foundname) {
                 if (err) console.log("name query error");
                 if (foundname === null) {
                     res.send(404, 'Sorry cant find that!');
@@ -68,14 +70,17 @@ db.once('open', function callback() {
             });
         }
     });
-    app.get('/admin', function(req, res) {
+    app.get('/admin', function (req, res) {
+        //Register the get parameter
         var system_name = req.query.n;
+        //If the page is the root of system
         if (system_name === undefined) {
-             system.find({}, {
+            //Find the list of the articles
+            system.find({}, {
                 title: 1,
                 name: 1,
                 _id: 0
-            }, function(err, foundarticle) {
+            }, function (err, foundarticle) {
                 res.render("admin_list.jade", {
                     "foundarticle": foundarticle,
                     "title": "Administration",
@@ -83,33 +88,46 @@ db.once('open', function callback() {
                 });
             });
         } else {
+            //Find the article
             system.findOne({
                 name: system_name
-            }, function(err, foundname) {
+            }, function (err, foundname) {
                 if (err) console.log("name query error");
+                // If there is no article found
                 if (foundname === null) {
                     res.send(404, 'Sorry cant find that!');
+                    // render the found article
                 } else {
                     res.render("admin_page.jade", foundname);
                 }
             });
         }
     });
+    app.post('/admin/ajax', function (req, res) {
+        system.update({
+            _id: req.body._id
+        }, {
+            $set: {
+                text: req.body.text
+            }
+        }, callback);
+        res.send(200);
+    });
 });
 // Routeur :
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.render("home.jade", {
         "pagetitle": "Rauks.org jeu de rôles Electropunk",
         "title": "Rauks.org jeu de rôles Electropunk"
     });
 });
-app.get('/about', function(req, res) {
+app.get('/about', function (req, res) {
     res.render("about.jade", {
         "pagetitle": "Autour du jeu de rôles Rauks.org",
         "title": "Pourquoi nous avons développé Rauks.org ?"
     });
 });
 //Handle 404
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.send(404, 'Sorry cant find that!');
 });

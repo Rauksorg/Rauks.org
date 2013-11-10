@@ -28,9 +28,7 @@ html(lang="fr")
         script(src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js")
         script(src="//tinymce.cachefly.net/4.0/tinymce.min.js")
         script(src='/js/rauks.js')
-
-
-        script
+        script.
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -41,7 +39,7 @@ html(lang="fr")
         div(data-role='page', data-theme='c')
 
             div#header(data-role="header", data-theme='c',data-position="fixed",data-tap-toggle="false")
-                div(data-role='controlgroup', data-type='horizontal', data-mini='true', style='text-align: center;')
+                div.centering(data-role='controlgroup', data-type='horizontal', data-mini='true')
                     a(href='/', data-role='button') Accueil
                     a(href='/about', data-role='button') Autour du jeu
                     a(href='/system', data-role='button') Système
