@@ -64,10 +64,12 @@ db.once('open', function callback() {
     var db_driven_route = function (route, pagetitle, title) {
         app.get('/' + route, function (req, res) {
             var system_name = req.query.n;
+            var categ={category: route};
+            if(route=="admin"){
+                categ={};
+            }
             if (system_name === undefined) {
-                article.find({
-                    category: route
-                }, {
+                article.find(categ, {
                     title: 1,
                     name: 1,
                     _id: 0
@@ -98,37 +100,8 @@ db.once('open', function callback() {
     db_driven_route("about", "Autour du jeu de rôles Rauks.org", "Pourquoi nous avons développé Rauks.org ?");
     db_driven_route("system", "Système de jeu", "Système de jeu");
     db_driven_route("material", "Matériel de jeu", "Matériel de jeu");
-    //
-    // Admin route
     db_driven_route("background", "Univers du jeu", "Univers du jeu");
-    app.get('/admin', function (req, res) {
-        var system_name = req.query.n;
-        if (system_name === undefined) {
-            article.find({}, {
-                title: 1,
-                name: 1,
-                _id: 0
-            }, function (err, foundarticle) {
-                res.render("admin.jade", {
-                    "foundarticle": foundarticle,
-                    "pagetitle": "administration",
-                    "title": "administration"
-                });
-            });
-        } else {
-            article.findOne({
-                name: system_name
-            }, function (err, foundname) {
-                if (err) console.log("name query error");
-                if (foundname === null) {
-                    res.send(404, 'Sorry cant find that!');
-                } else {
-                    // foundname render page title, title and text
-                    res.render("administration_page.jade", foundname);
-                }
-            });
-        }
-    });
+    db_driven_route("admin", "Univers du jeu", "Univers du jeu");
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function (req, res) {
