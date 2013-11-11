@@ -16,25 +16,41 @@ You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
 $(document).bind("pageinit", function () {
-
+    //google analytics
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-28391166-1', 'rauks.org');
+    ga('send', 'pageview');
+    //
+    //
     $("#savebutton").bind("click", function () {
         // var articleid come from jade template
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
-            data: JSON.stringify({"_id":articleid,"text":$('.textedit').html()}),
+            data: JSON.stringify({
+                "_id": articleid,
+                "text": $('.textedit').html()
+            }),
             contentType: 'application/json',
-            success: function (response) {
-            },
+            success: function (response) {},
             error: function () {
                 alert("Erreur dans l'envoi du texte");
             }
         });
     });
-
-     $("#updatebutton").bind("click", function () {
-         $(".textedit").trigger( "create" );
-     });
+    $("#updatebutton").bind("click", function () {
+        $(".textedit").trigger("create");
+    });
     tinymce.init({
         selector: "div.textedit",
         inline: true,
@@ -43,5 +59,4 @@ $(document).bind("pageinit", function () {
         fixed_toolbar_container: "#header",
         menubar: false
     });
-
 });
