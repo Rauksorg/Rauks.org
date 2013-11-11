@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Chech if running under cloud9 to set environnement variables
+// Check if running under cloud9 to set environnement variables
 if (process.env.C9_PROJECT) {
     require('./private.js');
 }
@@ -64,9 +64,11 @@ db.once('open', function callback() {
     var db_driven_route = function (route, pagetitle, title) {
         app.get('/' + route, function (req, res) {
             var system_name = req.query.n;
-            var categ={category: route};
-            if(route=="admin"){
-                categ={};
+            var categ = {
+                category: route
+            };
+            if (route == "admin") {
+                categ = {};
             }
             if (system_name === undefined) {
                 article.find(categ, {
@@ -105,14 +107,31 @@ db.once('open', function callback() {
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function (req, res) {
-        article.update({
-            _id: req.body._id
-        }, {
-            $set: {
-                text: req.body.text
-            }
-        });
-        res.send(200);
+        if (req.body.newarticle == 1) {
+            var createarticle = new article({
+                name: "nouveau",
+                category: "nouveau",
+                pagetitle: "Nouveau",
+                title: "__Nouveau__",
+                text: "<h2>Nouveau</h2>"
+            });
+            createarticle.save(function (err) {
+                if (err) { // TODO handle the error
+                    console.log("Error new article");
+                } else {
+                    res.send(200);
+                }
+            });
+        } else {
+            article.update({
+                _id: req.body._id
+            }, {
+                $set: {
+                    text: req.body.text
+                }
+            });
+            res.send(200);
+        }
     });
 });
 //

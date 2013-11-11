@@ -48,6 +48,20 @@ $(document).bind("pageinit", function () {
             }
         });
     });
+    $("#buttonnew").bind("click", function () {
+        console.log("newclicked");
+        
+        $.ajax({
+            url: '/admin/ajax',
+            type: 'POST',
+            data: JSON.stringify({newarticle:1}),
+            contentType: 'application/json',
+            success: function (response) {},
+            error: function () {
+                alert("Erreur dans l'envoi du texte");
+            }
+        });
+    });
     $("#updatebutton").bind("click", function () {
         $(".textedit").trigger("create");
     });
