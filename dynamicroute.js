@@ -1,5 +1,5 @@
 // db driven routeur function
-var db_driven_route = function (route, pagetitle, title) {
+var route = function (route, pagetitle, title) {
     app.get('/' + route, function (req, res) {
         var system_name = req.query.n;
         if (system_name === undefined) {
@@ -31,4 +31,4 @@ var db_driven_route = function (route, pagetitle, title) {
         }
     });
 };
-module.exports = db_driven_route;
+module.exports.route = route;

@@ -56,6 +56,9 @@ var article = mongoose.model('article', articleSchema);
 // 
 //DB open function
 db.once('open', function callback() {
+    
+    var test = require("./dynamicroute");
+    test.route("test","test","test");
     // 
     // db driven routeur function
    var db_driven_route = function (route, pagetitle, title) {
