@@ -101,7 +101,7 @@ db.once('open', function callback() {
     db_driven_route("system", "Système de jeu", "Système de jeu");
     db_driven_route("material", "Matériel de jeu", "Matériel de jeu");
     db_driven_route("background", "Univers du jeu", "Univers du jeu");
-    db_driven_route("admin", "Univers du jeu", "Univers du jeu");
+    db_driven_route("admin", "Administration", "Administration");
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function (req, res) {
