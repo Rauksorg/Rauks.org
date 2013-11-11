@@ -31,4 +31,4 @@ var route = function (route, pagetitle, title) {
         }
     });
 };
-module.exports.route = route;
+module.exports = route;
