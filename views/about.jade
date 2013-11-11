@@ -22,8 +22,8 @@ block content
             | force du joueur, mais bien sa capacité à les utiliser et à imaginer des
             | solutions. C’est donc la qualité de son jeu de rôle qui fera sa force.
     h2.centering Articles
-    ul(data-role='listview', data-inset='true')
-        li
-            a L'équipe
-        li
-            a Nous contacter
+    div.paragraphe
+        ul(data-role='listview', data-inset='true', data-theme='c')
+            each val, index in foundarticle
+                li
+                    a(href='/about?n='+ foundarticle[index].name)= foundarticle[index].title
