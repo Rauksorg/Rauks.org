@@ -7,5 +7,5 @@ block content
             each val, index in foundarticle
                 li
                     a(href='/admin?n='+ foundarticle[index].name)= foundarticle[index].title
-                        foundarticle[index].category
+                        p= foundarticle[index].category
     p= foundarticle
