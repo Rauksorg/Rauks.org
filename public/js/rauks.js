@@ -51,7 +51,7 @@ $(document).on("pagebeforeshow", function () {
                 alert("Erreur dans l'envoi du texte");
             }
         });
-        // $.mobile.changePage("/admin");
+        $.mobile.changePage("/admin");
     });
     $("#buttonnew").on("click", function () {
         $.ajax({
