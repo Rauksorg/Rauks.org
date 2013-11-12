@@ -47,6 +47,7 @@ $(document).bind("pageinit", function () {
                 alert("Erreur dans l'envoi du texte");
             }
         });
+        $.mobile.changePage("/admin");
     });
     $("#buttonnew").bind("click", function () {
         console.log("newclicked");
@@ -73,4 +74,10 @@ $(document).bind("pageinit", function () {
         fixed_toolbar_container: "#header",
         menubar: false
     });
+    tinymce.init({
+    selector: "h1.textedit",
+    inline: true,
+    toolbar: "undo redo",
+    menubar: false
+});
 });

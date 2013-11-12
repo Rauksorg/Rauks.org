@@ -1,9 +1,13 @@
 extends header.jade
 block content
-    h1.centering.maintitle.edit=title
+    label(for='category') Categorie
+    input#category(type='text', name='clear')=category
+    label(for='name') Nom pour url
+    input#name(type='text', name='clear')=name
+    button#savebutton Enregistrer
+    button#updatebutton Update
+    h1.centering.maintitle.textedit=title
     div.paragraphe_xlarge
         div.textedit!= text
-        button#savebutton Enregistrer
-        button#updatebutton Update
     script.
         var articleid = "#{_id}"

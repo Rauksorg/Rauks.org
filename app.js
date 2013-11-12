@@ -31,7 +31,6 @@ app.listen(process.env.PORT, process.env.IP);
 // Routeur simple
 app.get('/', function (req, res) {
     res.render("home.jade", {
-        "pagetitle": "Rauks.org jeu de rôles Electropunk",
         "title": "Rauks.org jeu de rôles Electropunk"
     });
 });
@@ -46,7 +45,6 @@ db.on('error', console.error.bind(console, 'mongodb connection error:'));
 var articleSchema = mongoose.Schema({
     name: String,
     category: String,
-    pagetitle: String,
     title: String,
     text: String
 });
@@ -61,16 +59,16 @@ db.once('open', function callback() {
     // test.route("background","Univers du jeu","Univers du jeu");
     // 
     // db driven routeur function
-    var db_driven_route = function (route, pagetitle, title) {
+    var db_driven_route = function (route, title) {
         app.get('/' + route, function (req, res) {
-            var system_name = req.query.n;
+            var article_name = req.query.n;
             var categ = {
                 category: route
             };
             if (route == "admin") {
                 categ = {};
             }
-            if (system_name === undefined) {
+            if (article_name === undefined) {
                 article.find(categ, {
                     title: 1,
                     name: 1,
@@ -78,20 +76,19 @@ db.once('open', function callback() {
                 }, function (err, foundarticle) {
                     res.render(route + ".jade", {
                         "foundarticle": foundarticle,
-                        "pagetitle": pagetitle,
                         "title": title
                     });
                 });
             } else {
                 article.findOne({
-                    name: system_name
-                }, function (err, foundname) {
+                    name: article_name
+                }, function (err, foundarticle) {
                     if (err) console.log("name query error");
-                    if (foundname === null) {
+                    if (foundarticle === null) {
                         res.send(404, 'Sorry cant find that!');
                     } else {
                         // foundname render page title, title and text
-                        res.render(route + "_page.jade", foundname);
+                        res.render(route + "_page.jade", foundarticle);
                     }
                 });
             }
@@ -99,11 +96,11 @@ db.once('open', function callback() {
     };
     // 
     // declare routes
-    db_driven_route("about", "Autour du jeu de rôles Rauks.org", "Pourquoi nous avons développé Rauks.org ?");
-    db_driven_route("system", "Système de jeu", "Système de jeu");
-    db_driven_route("material", "Matériel de jeu", "Matériel de jeu");
-    db_driven_route("background", "Univers du jeu", "Univers du jeu");
-    db_driven_route("admin", "Administration", "Administration");
+    db_driven_route("about", "Pourquoi nous avons développé Rauks.org ?");
+    db_driven_route("system", "Système de jeu");
+    db_driven_route("material", "Matériel de jeu");
+    db_driven_route("background",  "Univers du jeu");
+    db_driven_route("admin", "Administration");
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function (req, res) {
@@ -111,7 +108,6 @@ db.once('open', function callback() {
             var createarticle = new article({
                 name: "nouveau",
                 category: "nouveau",
-                pagetitle: "Nouveau",
                 title: "__Nouveau__",
                 text: "<h2>Nouveau</h2>"
             });
