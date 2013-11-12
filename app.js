@@ -104,21 +104,22 @@ db.once('open', function callback() {
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function (req, res) {
-        if (req.body.newarticle == 1) {
-            var createarticle = new article({
-                name: "nouveau",
-                category: "nouveau",
-                title: "__Nouveau__",
-                text: "<h2>Nouveau</h2>"
-            });
-            createarticle.save(function (err) {
-                if (err) { // TODO handle the error
-                    console.log("Error new article");
-                } else {
-                    res.send(200);
-                }
-            });
-        } else {
+        console.log(req.body);
+        // if (req.body.newarticle == 1) {
+        //     var createarticle = new article({
+        //         name: "nouveau",
+        //         category: "nouveau",
+        //         title: "__Nouveau__",
+        //         text: "<h2>Nouveau</h2>"
+        //     });
+        //     createarticle.save(function (err) {
+        //         if (err) { // TODO handle the error
+        //             console.log("Error new article");
+        //         } else {
+        //             res.send(200);
+        //         }
+        //     });
+        // } else {
             article.update({
                 _id: req.body._id
             }, {
@@ -130,7 +131,7 @@ db.once('open', function callback() {
                 }
             });
             res.send(200);
-        }
+        // }
     });
 });
 //
