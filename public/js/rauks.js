@@ -75,7 +75,6 @@ $(document).bind("pageinit", function () {
         inline: true,
         plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality charmap",
         toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist outdent indent | table link image charmap media | code",
-        fixed_toolbar_container: "#header",
         menubar: false
     });
     tinymce.init({
