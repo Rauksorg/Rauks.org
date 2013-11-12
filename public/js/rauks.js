@@ -34,31 +34,31 @@ $(document).bind("pageinit", function () {
     //
     $("#savebutton").bind("click", function () {
         // var articleid come from jade template
-
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
             data: JSON.stringify({
                 "_id": articleid,
-                "category":$('#category').val(),
-                "name":$('#name').val(),
-                "title":$('#titleedit').text(),
+                "category": $('#category').val(),
+                "name": $('#name').val(),
+                "title": $('#titleedit').text(),
                 "text": $('#textedit').html()
             }),
-            
             contentType: 'application/json',
             success: function (response) {},
             error: function () {
                 alert("Erreur dans l'envoi du texte");
             }
         });
-        $.mobile.changePage("/admin");
+        // $.mobile.changePage("/admin");
     });
     $("#buttonnew").bind("click", function () {
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
-            data: JSON.stringify({newarticle:1}),
+            data: JSON.stringify({
+                newarticle: 1
+            }),
             contentType: 'application/json',
             success: function (response) {},
             error: function () {
@@ -78,9 +78,9 @@ $(document).bind("pageinit", function () {
         menubar: false
     });
     tinymce.init({
-    selector: "#titleedit",
-    inline: true,
-    toolbar: "undo redo",
-    menubar: false
-});
+        selector: "#titleedit",
+        inline: true,
+        toolbar: "undo redo",
+        menubar: false
+    });
 });
