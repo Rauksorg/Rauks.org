@@ -43,8 +43,8 @@ $(document).bind("pageinit", function () {
             type: 'POST',
             data: JSON.stringify({
                 "_id": articleid,
-                "category":$('#category').text(),
-                "name":$('#name').text(),
+                "category":$('#category').val(),
+                "name":$('#name').val(),
                 "title":$('#titleedit').text(),
                 "text": $('#textedit').html()
             }),
