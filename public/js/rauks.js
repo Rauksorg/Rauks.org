@@ -45,7 +45,9 @@ $(document).bind("pageinit", function () {
                 "text": $('#textedit').html()
             }),
             contentType: 'application/json',
-            success: function (response) {},
+            success: function (response) {
+                console.log("good");
+            },
             error: function () {
                 alert("Erreur dans l'envoi du texte");
             }
