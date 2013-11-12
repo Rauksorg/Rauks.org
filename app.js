@@ -123,6 +123,9 @@ db.once('open', function callback() {
                 _id: req.body._id
             }, {
                 $set: {
+                    category: req.body.category,
+                    name: req.body.name,
+                    title: req.body.title,
                     text: req.body.text
                 }
             });
