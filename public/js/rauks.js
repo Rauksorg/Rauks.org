@@ -34,6 +34,8 @@ $(document).bind("pageinit", function () {
     //
     $("#savebutton").bind("click", function () {
         // var articleid come from jade template
+        console.log($('#titleedit').text());
+        console.log($('#name').text());
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -44,6 +46,7 @@ $(document).bind("pageinit", function () {
                 "title":$('#titleedit').text(),
                 "text": $('#textedit').html()
             }),
+            
             contentType: 'application/json',
             success: function (response) {},
             error: function () {
