@@ -2,7 +2,7 @@
   "name": "Rauks.org",
   "description": "",
   "author": "Thibaut CONSTANT",
-  "version": "0.0.1",
+  "version": "0.9.0",
   "private": true,
   "dependencies": {
     "express": "3.0.x",
