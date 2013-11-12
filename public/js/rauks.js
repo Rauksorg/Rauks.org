@@ -15,7 +15,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-$(document).bind("pageinit", function () {
+$(document).on("pagebeforeshow", function () {
     //google analytics
     (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -32,7 +32,7 @@ $(document).bind("pageinit", function () {
     ga('send', 'pageview');
     //
     //
-    $("#savebutton").bind("click", function () {
+    $("#savebutton").on("click", function () {
         // var articleid come from jade template
         $.ajax({
             url: '/admin/ajax',
@@ -53,7 +53,7 @@ $(document).bind("pageinit", function () {
         });
         // $.mobile.changePage("/admin");
     });
-    $("#buttonnew").bind("click", function () {
+    $("#buttonnew").on("click", function () {
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -67,10 +67,8 @@ $(document).bind("pageinit", function () {
             }
         });
     });
-    $("#updatebutton").bind("click", function () {
-        $(".textedit").trigger("create");
-    });
-    tinymce.init({
+   
+     tinymce.init({
         selector: "#textedit",
         inline: true,
         plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality charmap",
@@ -83,4 +81,5 @@ $(document).bind("pageinit", function () {
         toolbar: "undo redo",
         menubar: false
     });
+
 });

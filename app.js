@@ -69,11 +69,7 @@ db.once('open', function callback() {
                 categ = {};
             }
             if (article_name === undefined) {
-                article.find(categ, {
-                    title: 1,
-                    name: 1,
-                    _id: 0
-                }, function(err, foundarticle) {
+                article.find(categ, function(err, foundarticle) {
                     res.render(route + ".jade", {
                         "foundarticle": foundarticle,
                         "title": title
@@ -125,19 +121,13 @@ db.once('open', function callback() {
                 "_id": req.body._id
             }, {
                 "text": req.body.text,
-                "category":req.body.category,
-                "name":req.body.name,
-                "title":req.body.title
+                "category": req.body.category,
+                "name": req.body.name,
+                "title": req.body.title
             }, function(err, numberAffected, raw) {
                 if (err) return console.log(err);
                 res.send(200);
             });
-
-
-            
-
-
-
         }
     });
 });
