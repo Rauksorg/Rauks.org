@@ -1,13 +1,13 @@
 extends header.jade
 block content
     label(for='category') Categorie
-    input#category(type='text', name='clear')=category
+    input#category(type='text', name='clear' value=category)
     label(for='name') Nom pour url
-    input#name(type='text', name='clear')=name
+    input#name(type='text', name='clear' value=name)
     button#savebutton Enregistrer
     button#updatebutton Update
-    h1=category
-    h1=name
+    h1= category
+    h1= name
     h1.centering.maintitle.textedit=title
     div.paragraphe_xlarge
         div.textedit!= text
