@@ -39,7 +39,10 @@ $(document).bind("pageinit", function () {
             type: 'POST',
             data: JSON.stringify({
                 "_id": articleid,
-                "text": $('.textedit').html()
+                "category":$('#category').text(),
+                "name":$('#name').text(),
+                "title":$('#titleedit').text(),
+                "text": $('#textedit').html()
             }),
             contentType: 'application/json',
             success: function (response) {},
@@ -50,8 +53,6 @@ $(document).bind("pageinit", function () {
         $.mobile.changePage("/admin");
     });
     $("#buttonnew").bind("click", function () {
-        console.log("newclicked");
-        
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -67,7 +68,7 @@ $(document).bind("pageinit", function () {
         $(".textedit").trigger("create");
     });
     tinymce.init({
-        selector: "div.textedit",
+        selector: "#textedit",
         inline: true,
         plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality charmap",
         toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist outdent indent | table link image charmap media | code",
@@ -75,7 +76,7 @@ $(document).bind("pageinit", function () {
         menubar: false
     });
     tinymce.init({
-    selector: "h1.textedit",
+    selector: "#titleedit",
     inline: true,
     toolbar: "undo redo",
     menubar: false

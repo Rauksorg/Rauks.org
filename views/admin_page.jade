@@ -6,10 +6,8 @@ block content
     input#name(type='text', name='clear' value=name)
     button#savebutton Enregistrer
     button#updatebutton Update
-    h1= category
-    h1= name
-    h1.centering.maintitle.textedit=title
+    h1.centering.maintitle#titleedit=title
     div.paragraphe_xlarge
-        div.textedit!= text
+        div#textedit!= text
     script.
         var articleid = "#{_id}"
