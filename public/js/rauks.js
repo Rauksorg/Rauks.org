@@ -46,7 +46,6 @@ $(document).bind("pageinit", function () {
             }),
             contentType: 'application/json',
             success: function (response) {
-                console.log("good");
             },
             error: function () {
                 alert("Erreur dans l'envoi du texte");

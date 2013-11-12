@@ -21,7 +21,7 @@ if (process.env.C9_PROJECT) {
 }
 var express = require("express"),
     app = express();
-app.configure(function () {
+app.configure(function() {
     app.use(express.static(__dirname + '/public'));
     app.use(express.bodyParser());
 });
@@ -29,7 +29,7 @@ app.use('/admin', express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_P
 app.listen(process.env.PORT, process.env.IP);
 //
 // Routeur simple
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
     res.render("home.jade", {
         "title": "Rauks.org jeu de rôles Electropunk"
     });
@@ -59,8 +59,8 @@ db.once('open', function callback() {
     // test.route("background","Univers du jeu","Univers du jeu");
     // 
     // db driven routeur function
-    var db_driven_route = function (route, title) {
-        app.get('/' + route, function (req, res) {
+    var db_driven_route = function(route, title) {
+        app.get('/' + route, function(req, res) {
             var article_name = req.query.n;
             var categ = {
                 category: route
@@ -73,20 +73,22 @@ db.once('open', function callback() {
                     title: 1,
                     name: 1,
                     _id: 0
-                }, function (err, foundarticle) {
+                }, function(err, foundarticle) {
                     res.render(route + ".jade", {
                         "foundarticle": foundarticle,
                         "title": title
                     });
                 });
-            } else {
+            }
+            else {
                 article.findOne({
                     name: article_name
-                }, function (err, foundarticle) {
+                }, function(err, foundarticle) {
                     if (err) console.log("name query error");
                     if (foundarticle === null) {
                         res.send(404, 'Sorry cant find that!');
-                    } else {
+                    }
+                    else {
                         // foundname render page title, title and text
                         res.render(route + "_page.jade", foundarticle);
                     }
@@ -99,43 +101,48 @@ db.once('open', function callback() {
     db_driven_route("about", "Pourquoi nous avons développé Rauks.org ?");
     db_driven_route("system", "Système de jeu");
     db_driven_route("material", "Matériel de jeu");
-    db_driven_route("background",  "Univers du jeu");
+    db_driven_route("background", "Univers du jeu");
     db_driven_route("admin", "Administration");
     // 
     // route receiving texte modifications
-    app.post('/admin/ajax', function (req, res) {
-        console.log(req.body);
-        // if (req.body.newarticle == 1) {
-        //     var createarticle = new article({
-        //         name: "nouveau",
-        //         category: "nouveau",
-        //         title: "__Nouveau__",
-        //         text: "<h2>Nouveau</h2>"
-        //     });
-        //     createarticle.save(function (err) {
-        //         if (err) { // TODO handle the error
-        //             console.log("Error new article");
-        //         } else {
-        //             res.send(200);
-        //         }
-        //     });
-        // } else {
-            article.update({
-                _id: req.body._id
-            }, {
-                $set: {
-                    category: req.body.category,
-                    name: req.body.name,
-                    title: req.body.title,
-                    text: req.body.text
-                }
+    app.post('/admin/ajax', function(req, res) {
+        // to create new article
+        if (req.body.newarticle == 1) {
+            var createarticle = new article({
+                name: "nouveau",
+                category: "nouveau",
+                title: "__Nouveau__",
+                text: "<h2>Nouveau</h2>"
             });
-            res.send(200);
-        // }
+            createarticle.save(function(err) {
+                if (err) return console.log(err);
+                res.send(200);
+            });
+        }
+        else {
+            //update articles
+            article.update({
+                "_id": req.body._id
+            }, {
+                "text": req.body.text,
+                "category":req.body.category,
+                "name":req.body.name,
+                "title":req.body.title
+            }, function(err, numberAffected, raw) {
+                if (err) return console.log(err);
+                res.send(200);
+            });
+
+
+            
+
+
+
+        }
     });
 });
 //
 //Handle 404
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.send(404, 'Sorry cant find that!');
 });
