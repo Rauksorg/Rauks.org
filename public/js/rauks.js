@@ -35,8 +35,8 @@ $(document).bind("pageinit", function () {
     $("#savebutton").bind("click", function () {
         // var articleid come from jade template
         console.log($('#titleedit').text());
-        console.log($('#name').text());
-        console.log($('#category').text());
+        console.log($('#name').value());
+        console.log($('#category').value());
 
         $.ajax({
             url: '/admin/ajax',
