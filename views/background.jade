@@ -2,7 +2,7 @@ extends header.jade
 block content
     h1.centering.maintitle=title
     div.paragraphe
-        ul(data-role='listview', data-inset='true', data-divider-theme='a',data-theme='e')
+        ul(data-role='listview', data-inset='true', data-divider-theme='a',data-theme='f')
             each val, index in foundarticle
                 li
                     a(href='/material?n='+ foundarticle[index].name)= foundarticle[index].title
