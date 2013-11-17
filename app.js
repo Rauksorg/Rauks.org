@@ -69,7 +69,7 @@ db.once('open', function callback() {
                 categ = {};
             }
             if (article_name === undefined) {
-                article.find(categ, function(err, foundarticle) {
+                article.find(categ, null,{sort: {title: 1}}, function(err, foundarticle) {
                     res.render(route + ".jade", {
                         "foundarticle": foundarticle,
                         "title": title
