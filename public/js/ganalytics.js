@@ -1,3 +1,4 @@
+$(document).on("pageshow", function() {
     //google analytics
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -12,5 +13,4 @@
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-28391166-1', 'rauks.org');
     ga('send', 'pageview');
-    //
-    //
+});
