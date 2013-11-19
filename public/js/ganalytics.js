@@ -1,4 +1,3 @@
-$(document).on("pageload", function(){ 
     //google analytics
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
@@ -15,4 +14,3 @@ $(document).on("pageload", function(){
     ga('send', 'pageview');
     //
     //
-})
