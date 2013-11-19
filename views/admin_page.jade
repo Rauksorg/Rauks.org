@@ -1,12 +1,17 @@
 extends header.jade
 block content
-    label(for='category') Categorie
-    input#category(type='text', name='clear' value=category)
-    label(for='name') Nom pour url
-    input#name(type='text', name='clear' value=name)
-    button#savebutton Enregistrer
     h1.centering.maintitle#titleedit=title
     div.paragraphe_xlarge
         div#textedit!= text
+    br
+    hr
+    h2 Gestion de la page
+    button#savebutton Enregistrer
+    label(for='category') Categorie
+    input#category(type='text', value=category)
+    label(for='name') Nom pour url
+    input#name(type='text', value=name)
+    label(for='description') Description
+    textarea#description(value=description)
     script.
         var articleid = "#{_id}"

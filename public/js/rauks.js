@@ -15,24 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-$(document).on("pagebeforeshow", function () {
-    //google analytics
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-28391166-1', 'rauks.org');
-    ga('send', 'pageview');
-    //
-    //
-    $("#savebutton").on("click", function () {
+$(document).on("pagebeforeshow", function() {
+    $("#savebutton").on("click", function() {
         // var articleid come from jade template
         $.ajax({
             url: '/admin/ajax',
@@ -45,15 +29,13 @@ $(document).on("pagebeforeshow", function () {
                 "text": $('#textedit').html()
             }),
             contentType: 'application/json',
-            success: function (response) {
-            },
-            error: function () {
+            success: function(response) {},
+            error: function() {
                 alert("Erreur dans l'envoi du texte");
             }
         });
-        $.mobile.changePage("/admin");
     });
-    $("#buttonnew").on("click", function () {
+    $("#buttonnew").on("click", function() {
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -61,14 +43,14 @@ $(document).on("pagebeforeshow", function () {
                 newarticle: 1
             }),
             contentType: 'application/json',
-            success: function (response) {},
-            error: function () {
+            success: function(response) {},
+            error: function() {
                 alert("Erreur dans l'envoi du texte");
             }
         });
     });
-   
-     tinymce.init({
+
+    tinymce.init({
         selector: "#textedit",
         inline: true,
         plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality charmap",
