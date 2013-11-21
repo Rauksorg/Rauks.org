@@ -5,19 +5,18 @@
      box-shadow: 0 4px 6px #aaa;
  }
  .paragraphe {
-     width: 50%;
+     max-width: 600px;
      text-align: justify;
      margin: auto;
-     text-indent: 15px;
  }
  .paragraphe_large {
-     width: 75%;
+     max-width: 800px;
      text-align: justify;
      margin: auto;
      text-indent: 15px;
  }
  .paragraphe_xlarge {
-     width: 87%;
+     max-width: 1000px;
      /*text-align: justify;*/
      margin: auto;
      /*text-indent: 15px;*/

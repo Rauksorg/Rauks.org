@@ -39,25 +39,21 @@ app.get('/', function(req, res) {
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL);
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'mongodb connection error:'));
-//
-//Mongoose schema
-var articleSchema = mongoose.Schema({
-    name: String,
-    category: String,
-    title: String,
-    text: String
-});
-// 
-// Mongoose model
-var article = mongoose.model('article', articleSchema);
-// 
 //DB open function
+db.on('error', console.error.bind(console, 'mongodb connection error:'));
 db.once('open', function callback() {
-    // //marche pas :
-    // var test = require("./dynamicroute");
-    // test.route("background","Univers du jeu","Univers du jeu");
+    //
+    //Mongoose schema
+    var articleSchema = mongoose.Schema({
+        name: String,
+        category: String,
+        title: String,
+        text: String
+    });
+    // articleSchema.set('autoIndex', false);
     // 
+    // Mongoose model
+    var article = mongoose.model('article', articleSchema);
     // db driven routeur function
     var db_driven_route = function(route, title) {
         app.get('/' + route, function(req, res) {
@@ -69,7 +65,11 @@ db.once('open', function callback() {
                 categ = {};
             }
             if (article_name === undefined) {
-                article.find(categ, null,{sort: {title: 1}}, function(err, foundarticle) {
+                article.find(categ, null, {
+                    sort: {
+                        title: 1
+                    }
+                }, function(err, foundarticle) {
                     res.render(route + ".jade", {
                         "foundarticle": foundarticle,
                         "title": title

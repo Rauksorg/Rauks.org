@@ -1,10 +1,11 @@
 extends header.jade
 block content
     h1.centering.maintitle=title
-    div.paragraphe
+    div.paragraphe_large
         button#buttonnew Nouveau
+        br
        ul(data-role='listview', data-inset='true', data-theme='a',data-filter='true', data-filter-placeholder='Rechercher un article...',)
             each val, index in foundarticle
                 li
                     a(href='/admin?n='+ foundarticle[index].name)= foundarticle[index].title
-                        p= foundarticle[index].category
+                        p.ui-li-aside= foundarticle[index].category
