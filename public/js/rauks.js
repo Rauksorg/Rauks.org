@@ -31,7 +31,7 @@ $(document).on("pagebeforeshow", function() {
             contentType: 'application/json',
             success: function(response) {},
             error: function() {
-                alert("Erreur dans l'envoi du texte");
+                alert("Oups ! L'enregistrement des modifications n'a pas bien fonctionné. Veuillez vérifier votre connexion internet et réessayer l'enregistrement.");
             }
         });
     });
@@ -48,6 +48,7 @@ $(document).on("pagebeforeshow", function() {
                 alert("Erreur dans l'envoi du texte");
             }
         });
+        $("#list").prepend(adminlist({name:'nouveau',title:'__Nouveau__',category:"nouveau"})).listview("refresh");
     });
 
     tinymce.init({
