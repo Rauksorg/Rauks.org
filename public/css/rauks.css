@@ -1,25 +1,25 @@
  .polaroid {
      background: white;
-     margin: 0 15px 15px;
+     margin-right: 15px;
      padding: 10px 10px 45px;
      box-shadow: 0 4px 6px #aaa;
  }
  .paragraphe {
-     max-width: 600px;
-     text-align: justify;
+     max-width: 700px;
+     /*text-align: justify;*/
      margin: auto;
  }
  .paragraphe_large {
-     max-width: 800px;
+     max-width: 700px;
      text-align: justify;
      margin: auto;
      text-indent: 15px;
+     min-height:360px
  }
  .paragraphe_xlarge {
      max-width: 1000px;
-     /*text-align: justify;*/
      margin: auto;
-     /*text-indent: 15px;*/
+     text-indent: 15px;
  }
  .centering {
      text-align:center;
@@ -29,7 +29,33 @@
      margin:0 auto;
      margin-bottom:25px;
  }
- .mce-tinymce{
+ .mce-tinymce {
      margin:0 auto !important;
      text-align: center;
+ }
+ html, body {
+     height:100%;
+ }
+ #body {
+     padding-bottom:150px;
+     /* Height of the footer */
+ }
+ #footer {
+     position:absolute;
+     bottom:0;
+     width:100%;
+     height:100px;
+     /* Height of the footer */
+     /*background: #d1d1d1;*/
+     /*background:url(/img/noise.jpg);*/
+   background: rgba(209,209,209,1);
+   background-image:url(/img/noise.jpg);
+background: -moz-linear-gradient(top, rgba(209,209,209,0.5) 0%, rgba(0,0,0,0) 10%),url(/img/noise.jpg);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(209,209,209,0)), color-stop(20%, rgba(0,0,0,0.5))),url(/img/noise.jpg);
+background: -webkit-linear-gradient(top, rgba(209,209,209,0.5) 0%, rgba(0,0,0,0) 10%),url(/img/noise.jpg);
+background: -o-linear-gradient(top, rgba(209,209,209,0.5) 0%, rgba(0,0,0,0) 10%),url(/img/noise.jpg);
+background: -ms-linear-gradient(top, rgba(209,209,209,0.5) 0%, rgba(0,0,0,0) 10%),url(/img/noise.jpg);
+background: linear-gradient(to bottom, rgba(209,209,209,0.5) 0%, rgba(0,0,0,0) 10%),url(/img/noise.jpg);
+   background-size:100px 100px;
+
  }

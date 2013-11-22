@@ -2,13 +2,12 @@ extends header.jade
 block content
     h1.centering.maintitle=title
     .paragraphe_large
+        img.polaroid(src='img/WALL.jpg', width='300', height='300', alt='WALL', style='float: left;')
         p Le système de jeu est conçu pour être simple et rapide, voir expéditif. Le but est de permettre une meilleure fluidité dans la narration.
-        p Pour simplifier la lecture des résultats, le système ast basé uniquement sur des dès six personnalisés. Tout est fait pour que les joueurs puissent eux même apprécier leur réussite ou leur échec aux jets, permetant de délester le maître des jeux d’une grande partie de la mécanique.
+        p Pour simplifier la lecture des résultats, le système est basé uniquement sur des dès six personnalisés. Tout est fait pour que les joueurs puissent eux même apprécier leur réussite ou leur échec aux jets, permetant de délester le maître des jeux d’une grande partie de la mécanique.
+    h2.centering Articles
     .paragraphe    
         ul(data-role='listview', data-inset='true',data-theme='d', data-icon="false")
             each val, index in foundarticle
                 li
                     a(href='/system?n='+ foundarticle[index].name)= foundarticle[index].title
-
-    .centering
-        a(href='http://www.flickr.com/photos/97936203@N04/10583718156/', title='WALL de Tetraib, sur Flickr'): img.polaroid(src='http://farm4.staticflickr.com/3690/10583718156_47daa02c40_b.jpg', width='1024', height='469', alt='WALL')
