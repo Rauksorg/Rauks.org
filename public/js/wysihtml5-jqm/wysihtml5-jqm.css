@@ -10,7 +10,7 @@
 .centertoolbar { 
 	/* fixed position a zero-height full width container */
 	position: fixed;
-	top: 110px;
+	top: 53px;
 	left: 0;
 	right: 0;
 	height: 0;
