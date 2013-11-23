@@ -1,8 +1,9 @@
 extends header.jade
 block content
-    h1.centering.maintitle#titleedit=title
-    .paragraphe_xlarge
-        div#textedit!= text
+    h1.centering.maintitle#title(contenteditable="true")=title
+    br
+    br
+    textarea#wysihtml5-textarea(style="-moz-box-shadow: none !important;-webkit-box-shadow: none !important;box-shadow: none !important;")!=text
     br
     hr
     h2 Gestion de la page
@@ -11,7 +12,68 @@ block content
     input#category(type='text', value=category)
     label(for='name') Nom pour url
     input#name(type='text', value=name)
-    label(for='description') Description
-    textarea#description(value=description)
+    label(for='descript') Description
+    textarea#descript=descript
+    .centertoolbar
+        .ui-bar.ui-bar-a.ui-btn-corner-all
+            #wysihtml5-toolbar(style="display: none;")
+                .ui-corner-all.ui-controlgroup.ui-controlgroup-horizontal
+                    .ui-controlgroup-controls
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-first-child(data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1")
+                          span.ui-btn-inner
+                            span.ui-btn-text H1
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all(data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2")
+                          span.ui-btn-inner
+                            span.ui-btn-text H2
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all(data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3")
+                          span.ui-btn-inner
+                            span.ui-btn-text H3
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child(data-wysihtml5-command='insertUnorderedList')
+                          span.ui-btn-inner
+                            span.ui-btn-text Li
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-first-child(data-wysihtml5-command='bold')
+                          span.ui-btn-inner
+                            span.ui-btn-text: b g
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all(data-wysihtml5-command='italic')
+                          span.ui-btn-inner
+                            span.ui-btn-text: i i
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child(data-wysihtml5-command='underline')
+                          span.ui-btn-inner
+                            span.ui-btn-text: u s
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-first-child(data-wysihtml5-command="justifyLeft")
+                          span.ui-btn-inner
+                            span.ui-btn-text Gauche
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all(data-wysihtml5-command="justifyCenter")
+                          span.ui-btn-inner
+                            span.ui-btn-text Centre
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child(data-wysihtml5-command="justifyRight")
+                          span.ui-btn-inner
+                            span.ui-btn-text Droite
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-first-child(data-wysihtml5-command="createLink")
+                          span.ui-btn-inner
+                            span.ui-btn-text Lien
+                        .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child(data-wysihtml5-command="insertImage")
+                          span.ui-btn-inner
+                            span.ui-btn-text Image
+                        .srccode.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child.ui-first-child(data-wysihtml5-action="change_view")
+                          span.ui-btn-inner
+                            span.ui-btn-text= "</>"
+                    // 
+            div(data-wysihtml5-dialog='insertImage' style="display: none;")
+                label Image :
+                    .ui-grid-a
+                        .ui-block-a
+                            input(data-wysihtml5-dialog-field='src', value='http://')
+                        .ui-block-b
+                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='save') Valider
+                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='cancel') Annuler
+            div(data-wysihtml5-dialog='createLink' style="display: none;")
+                label Lien :
+                    .ui-grid-a
+                        .ui-block-a
+                            input(data-wysihtml5-dialog-field='href', value='http://')
+                        .ui-block-b
+                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='save') Valider
+                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='cancel') Annuler
     script.
         var articleid = "#{_id}"

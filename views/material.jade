@@ -6,4 +6,7 @@ block content
         ul(data-role='listview', data-inset='true', data-divider-theme='a',data-theme='e')
             each val, index in foundarticle
                 li
-                    a(href='/material?n='+ foundarticle[index].name)= foundarticle[index].title
+                    a(href='/material?n='+ foundarticle[index].name)
+                        h3= foundarticle[index].title
+                        p=foundarticle[index].descript
+                        p.ui-li-aside= foundarticle[index].category

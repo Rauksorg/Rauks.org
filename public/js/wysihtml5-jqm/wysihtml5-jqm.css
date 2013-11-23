@@ -1,0 +1,23 @@
+.wysiwyg-text-align-left {
+    text-align: left;
+}
+.wysiwyg-text-align-center {
+    text-align: center;
+}
+.wysiwyg-text-align-right {
+    text-align: right;
+}
+.centertoolbar { 
+	/* fixed position a zero-height full width container */
+	position: fixed;
+	top: 110px;
+	left: 0;
+	right: 0;
+	height: 0;
+	/* center all inline content */
+	text-align: center;
+}
+
+.centertoolbar > div {
+	display: inline-block;
+}

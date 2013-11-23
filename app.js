@@ -48,6 +48,7 @@ db.once('open', function callback() {
         name: String,
         category: String,
         title: String,
+        descript: String,
         text: String
     });
     // articleSchema.set('autoIndex', false);
@@ -107,8 +108,9 @@ db.once('open', function callback() {
             var createarticle = new article({
                 name: "nouveau",
                 category: "nouveau",
-                title: "__Nouveau__",
-                text: "<h2>Nouveau</h2>"
+                title: "Nouveau",
+                descript : "Description",
+                text: "<h2>Titre</h2><p>Paragraphe</p>"
             });
             createarticle.save(function(err) {
                 if (err) return console.log(err);
@@ -123,6 +125,7 @@ db.once('open', function callback() {
                 "text": req.body.text,
                 "category": req.body.category,
                 "name": req.body.name,
+                "descript": req.body.descript,
                 "title": req.body.title
             }, function(err, numberAffected, raw) {
                 if (err) return console.log(err);

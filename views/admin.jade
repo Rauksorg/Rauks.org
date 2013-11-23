@@ -7,5 +7,7 @@ block content
        ul#list(data-role='listview', data-inset='true', data-theme='a',data-filter='true', data-filter-placeholder='Rechercher un article...',)
             each val, index in foundarticle
                 li
-                    a(href='/admin?n='+ foundarticle[index].name)= foundarticle[index].title
+                    a(href='/admin?n='+ foundarticle[index].name)
+                        h3= foundarticle[index].title + " : /" + foundarticle[index].name
+                        p=foundarticle[index].descript
                         p.ui-li-aside= foundarticle[index].category

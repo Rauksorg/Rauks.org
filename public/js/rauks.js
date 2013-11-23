@@ -18,6 +18,7 @@ along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 $(document).on("pagebeforeshow", function() {
     $("#savebutton").on("click", function() {
         // var articleid come from jade template
+        console.log($('#descript').val());
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -25,8 +26,9 @@ $(document).on("pagebeforeshow", function() {
                 "_id": articleid,
                 "category": $('#category').val(),
                 "name": $('#name').val(),
-                "title": $('#titleedit').text(),
-                "text": $('#textedit').html()
+                "title": $('#title').html(),
+                "descript": $('#descript').val(),
+                "text": $('#wysihtml5-textarea').val()
             }),
             contentType: 'application/json',
             success: function(response) {},
@@ -48,21 +50,7 @@ $(document).on("pagebeforeshow", function() {
                 alert("Erreur dans l'envoi du texte");
             }
         });
-        $("#list").prepend(adminlist({name:'nouveau',title:'__Nouveau__',category:"nouveau"})).listview("refresh");
-    });
-
-    tinymce.init({
-        selector: "#textedit",
-        inline: true,
-        plugins: "advlist autolink lists link image charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality charmap",
-        toolbar1: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist outdent indent | table link image charmap media | code",
-        menubar: false
-    });
-    tinymce.init({
-        selector: "#titleedit",
-        inline: true,
-        toolbar: "undo redo",
-        menubar: false
+        $("#list").prepend(adminlist({foundarticle:[{name:'nouveau',title:'Nouveau',descript:"Description",category:"nouveau"},]})).listview("refresh");
     });
 
 });

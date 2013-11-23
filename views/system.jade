@@ -10,4 +10,7 @@ block content
         ul(data-role='listview', data-inset='true',data-theme='d', data-icon="false")
             each val, index in foundarticle
                 li
-                    a(href='/system?n='+ foundarticle[index].name)= foundarticle[index].title
+                    a(href='/system?n='+ foundarticle[index].name)
+                        h3= foundarticle[index].title
+                        p=foundarticle[index].descript
+                        p.ui-li-aside= foundarticle[index].category
