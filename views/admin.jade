@@ -4,7 +4,7 @@ block content
     div.paragraphe_large
         button#buttonnew Nouveau
         br
-       ul#list(data-role='listview', data-inset='true', data-theme='a',data-filter='true', data-filter-placeholder='Rechercher un article...',)
+       ul#list(data-role='listview', data-inset='true', data-theme='a',data-filter='true', data-filter-placeholder='Rechercher un article...', data-icon="false")
             each val, index in foundarticle
                 li
                     a(href='/admin?n='+ foundarticle[index].name)
