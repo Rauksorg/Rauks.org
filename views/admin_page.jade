@@ -22,13 +22,13 @@ block content
                     .ui-controlgroup-controls
                         .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-first-child(data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1")
                           span.ui-btn-inner
-                            span.ui-btn-text H1
+                            span.ui-btn-text: font(size="3") T1
                         .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all(data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2")
                           span.ui-btn-inner
-                            span.ui-btn-text H2
+                            span.ui-btn-text: font(size="2") T2
                         .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all(data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3")
                           span.ui-btn-inner
-                            span.ui-btn-text H3
+                            span.ui-btn-text: font(size="1") T3
                         .btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child(data-wysihtml5-command='insertUnorderedList')
                           span.ui-btn-inner
                             span.ui-btn-text: i.fa.fa-list-ul
@@ -60,21 +60,21 @@ block content
                           span.ui-btn-inner
                             span.ui-btn-text= "</>"
                     // 
-            div(data-wysihtml5-dialog='insertImage' style="display: none;")
-                label Image :
-                    .ui-grid-a
-                        .ui-block-a
-                            input(data-wysihtml5-dialog-field='src', value='http://')
-                        .ui-block-b
-                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='save') Valider
-                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='cancel') Annuler
-            div(data-wysihtml5-dialog='createLink' style="display: none;")
-                label Lien :
-                    .ui-grid-a
-                        .ui-block-a
-                            input(data-wysihtml5-dialog-field='href', value='http://')
-                        .ui-block-b
-                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='save') Valider
-                            a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='cancel') Annuler
+                div(data-wysihtml5-dialog='insertImage' style="display: none;")
+                    label Image :
+                        .ui-grid-a
+                            .ui-block-a
+                                input(data-wysihtml5-dialog-field='src', value='http://')
+                            .ui-block-b
+                                a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='save') Valider
+                                a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='cancel') Annuler
+                div(data-wysihtml5-dialog='createLink' style="display: none;")
+                    label Lien :
+                        .ui-grid-a
+                            .ui-block-a
+                                input(data-wysihtml5-dialog-field='href', value='http://')
+                            .ui-block-b
+                                a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='save') Valider
+                                a(data-role="button" data-inline="true" data-wysihtml5-dialog-action='cancel') Annuler
     script.
         var articleid = "#{_id}"
