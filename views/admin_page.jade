@@ -8,13 +8,18 @@ block content
     br
     hr
     h2 Gestion de la page
-    button#savebutton Enregistrer
     label(for='category') Categorie
     input#category(type='text', value=category)
     label(for='name') Nom pour url
     input#name(type='text', value=name)
     label(for='descript') Description
     textarea#descript=descript
+    .ui-grid-a
+        .ui-block-a(style="width:80%")
+            button#savebuttonreturn Enregistrer et retour
+        .ui-block-b(style="width:20%")
+            button#preview Prévisualiser
+    // Toolbar wysihtml5-jqm
     .centertoolbar
         .ui-bar.ui-bar-a.ui-btn-corner-all
             #wysihtml5-toolbar(style="display: none;")
@@ -59,6 +64,9 @@ block content
                         .srccode.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child.ui-first-child(data-wysihtml5-action="change_view")
                           span.ui-btn-inner
                             span.ui-btn-text= "</>"
+                        #savebutton.ui-disabled.btnbar.ui-btn.ui-btn-up-a.ui-shadow.ui-btn-corner-all.ui-last-child.ui-first-child
+                          span.ui-btn-inner
+                            span.ui-btn-text: i.fa.fa-floppy-o
                     // 
                 div(data-wysihtml5-dialog='insertImage' style="display: none;")
                     label Image :

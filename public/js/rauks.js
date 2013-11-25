@@ -16,9 +16,8 @@ You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
 $(document).on("pagebeforeshow", function() {
-    $("#savebutton").on("click", function() {
+    var savepage = function(){
         // var articleid come from jade template
-        console.log($('#descript').val());
         $.ajax({
             url: '/admin/ajax',
             type: 'POST',
@@ -36,7 +35,23 @@ $(document).on("pagebeforeshow", function() {
                 alert("Oups ! L'enregistrement des modifications n'a pas bien fonctionné. Veuillez vérifier votre connexion internet et réessayer l'enregistrement.");
             }
         });
+    };
+    $("#savebutton").on("click", function() {
+        
+        savepage();
+        $("#savebutton").addClass("ui-disabled");
+        
     });
+    
+    $("#savebuttonreturn").on("click", function() {
+        savepage();
+        $.mobile.changePage("/admin", { reloadPage:true});
+    });
+     $("#preview").on("click", function() {
+        savepage();
+        window.open($('#category').val()+"?n="+$('#name').val(), '_blank');
+    });
+    
     $("#buttonnew").on("click", function() {
         $.ajax({
             url: '/admin/ajax',
@@ -52,5 +67,7 @@ $(document).on("pagebeforeshow", function() {
         });
         $("#list").prepend(adminlist({foundarticle:[{name:'nouveau',title:'Nouveau',descript:"Description",category:"nouveau"},]})).listview("refresh");
     });
+  
 
 });
+

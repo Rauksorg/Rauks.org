@@ -20,14 +20,21 @@
      max-width: 700px;
      text-align: justify;
      margin: auto;
-     text-indent: 15px;
+     /*text-indent: 15px;*/
      min-height:360px
  }
+
  .paragraphe_xlarge {
      max-width: 1000px;
      margin: auto;
-     text-indent: 15px;
+     /*text-indent: 15px;*/
  }
+ /*.paragraphe_xlarge p {*/
+ /*    text-indent: 15px;*/
+ /*}*/
+ /* .paragraphe_large p {*/
+ /*    text-indent: 15px;*/
+ /*}*/
  .centering {
      text-align:center;
  }
@@ -36,16 +43,13 @@
      margin:0 auto;
      margin-bottom:25px;
  }
- @font-face
-{
-font-family: ds-digital;
-src: url(/font/DS-DIGIB.TTF);
-}
-.digital{
-
-font-family:ds-digital;
-
-}
+ @font-face {
+     font-family: ds-digital;
+     src: url(/font/DS-DIGIB.TTF);
+ }
+ .digital {
+     font-family:ds-digital;
+ }
  .mce-tinymce {
      margin:0 auto !important;
      text-align: center;

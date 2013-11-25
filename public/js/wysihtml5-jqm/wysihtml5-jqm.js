@@ -9,7 +9,6 @@ $(document).on("pageinit", function(event) {
             parserRules: wysihtml5ParserRules
 
         });
-
         editor.on('load', function() {
             // The wysiwyg editor is in the DOM. It's safe to make the plugin call
             $(editor.composer.iframe).wysihtml5_size_matters();
@@ -27,11 +26,14 @@ $(document).on("pageinit", function(event) {
                 $(".btnbar").removeClass("ui-disabled");
             }
         });
+         editor.on("newword:composer",function(e) {
+            $("#savebutton").removeClass("ui-disabled");
+        });
         $(".btnbar, .srccode").on("mouseover", function() {
             $(this).addClass("ui-btn-hover-a");
         });
         $(".btnbar, .srccode").on("mouseout", function() {
             $(this).removeClass("ui-btn-hover-a");
         });
-    };
-})
+    }
+});

@@ -10,12 +10,13 @@
 .centertoolbar { 
 	/* fixed position a zero-height full width container */
 	position: fixed;
-	top: 53px;
+	top: 40px;
 	left: 0;
 	right: 0;
 	height: 0;
 	/* center all inline content */
 	text-align: center;
+	z-index:99999999;
 }
 
 .centertoolbar > div {
