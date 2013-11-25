@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
 $(document).on("pagebeforeshow", function() {
-    var savepage = function(){
+    var savepage = function() {
         // var articleid come from jade template
         $.ajax({
             url: '/admin/ajax',
@@ -36,22 +36,34 @@ $(document).on("pagebeforeshow", function() {
             }
         });
     };
+    // Remove ui-disabled from save button
+    $("input, textarea").change(function() {
+        $("#savebutton").removeClass("ui-disabled");
+    });
+    var contents = $('#title').html();
+    $('#title').blur(function() {
+        if (contents != $(this).html()) {
+            $("#savebutton").removeClass("ui-disabled");
+            contents = $(this).html();
+        }
+    });
+    //
+    //
     $("#savebutton").on("click", function() {
-        
         savepage();
         $("#savebutton").addClass("ui-disabled");
-        
     });
-    
     $("#savebuttonreturn").on("click", function() {
         savepage();
-        $.mobile.changePage("/admin", { reloadPage:true});
+        $.mobile.changePage("/admin", {
+            reloadPage: true
+        });
     });
-     $("#preview").on("click", function() {
+    $("#preview").on("click", function() {
         savepage();
-        window.open($('#category').val()+"?n="+$('#name').val(), '_blank');
+        window.open($('#category').val() + "?n=" + $('#name').val(), '_blank');
     });
-    
+
     $("#buttonnew").on("click", function() {
         $.ajax({
             url: '/admin/ajax',
@@ -65,9 +77,15 @@ $(document).on("pagebeforeshow", function() {
                 alert("Erreur dans l'envoi du texte");
             }
         });
-        $("#list").prepend(adminlist({foundarticle:[{name:'nouveau',title:'Nouveau',descript:"Description",category:"nouveau"},]})).listview("refresh");
+        $("#list").prepend(adminlist({
+            foundarticle: [{
+                name: 'nouveau',
+                title: 'Nouveau',
+                descript: "Description",
+                category: "nouveau"
+            }, ]
+        })).listview("refresh");
     });
-  
+
 
 });
-
