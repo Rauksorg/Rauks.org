@@ -26,7 +26,10 @@ $(document).on("pageinit", function(event) {
                 $(".btnbar").removeClass("ui-disabled");
             }
         });
-         editor.on("newword:composer",function(e) {
+        editor.on("newword:composer", function(e) {
+            $("#savebutton").removeClass("ui-disabled");
+        });
+        editor.on("change", function() {
             $("#savebutton").removeClass("ui-disabled");
         });
         $(".btnbar, .srccode").on("mouseover", function() {
