@@ -20,9 +20,10 @@ if (process.env.C9_PROJECT) {
     require('./private.js');
 }
 var express = require("express"),
-    app = express();
+    app = express(),
+    oneYear = 31557600000;
 app.configure(function() {
-    app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
     app.use(express.bodyParser());
 });
 app.use('/admin', express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_PSWD));
@@ -31,7 +32,7 @@ app.listen(process.env.PORT, process.env.IP);
 // Routeur simple
 app.get('/', function(req, res) {
     res.render("home.jade", {
-        "title": "Rauks.org jeu de rôles Electropunk"
+        "title": "Rauks.org jeu de rôle Electropunk"
     });
 });
 // 
