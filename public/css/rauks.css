@@ -1,9 +1,6 @@
 a {
     text-decoration: none !important;
 }
-a:hover {
-    text-decoration: underline !important;
-}
  .polaroid {
      background: white;
      margin-right: 15px;
