@@ -25,7 +25,8 @@ var express = require("express"),
 app.configure(function() {
     app.use(express.compress());
     app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
-    app.use(express.bodyParser());
+    app.use(express.json());
+    app.use(express.urlencoded());
 });
 app.use('/admin', express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_PSWD));
 app.listen(process.env.PORT, process.env.IP);
@@ -36,6 +37,7 @@ app.get('/', function(req, res) {
         "title": "Rauks.org jeu de rôle Electropunk"
     });
 });
+
 // 
 //start moongoose
 var mongoose = require('mongoose');
