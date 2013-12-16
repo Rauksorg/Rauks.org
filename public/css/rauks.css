@@ -1,6 +1,9 @@
 a {
     text-decoration: none !important;
 }
+.ui-link:hover {
+    text-decoration:underline !important;
+}
  .polaroid {
      background: white;
      margin-right: 15px;

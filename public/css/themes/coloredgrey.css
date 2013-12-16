@@ -38,6 +38,7 @@
 }
 .ui-bar-a a.ui-link:hover {
 	color: #2489ce /*{a-bar-link-hover}*/;
+
 }
 .ui-bar-a a.ui-link:active {
 	color: #2489ce /*{a-bar-link-active}*/;
@@ -85,6 +86,7 @@
 }
 .ui-body-a .ui-link:hover {
 	color: #454545 /*{a-body-link-hover}*/;
+
 }
 .ui-body-a .ui-link:active {
 	color: #000000 /*{a-body-link-active}*/;
@@ -222,6 +224,7 @@
 }
 .ui-body-b .ui-link:hover {
 	color: #454545 /*{b-body-link-hover}*/;
+
 }
 .ui-body-b .ui-link:active {
 	color: #000000 /*{b-body-link-active}*/;
