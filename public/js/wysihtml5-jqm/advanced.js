@@ -182,12 +182,12 @@ var wysihtml5ParserRules = {
         },
         "a": {
             "check_attributes": {
-                "href": "url", // if you compiled master manually then change this from 'url' to 'href',
-                "id":"alt"
+                "href": "alt", // if you compiled master manually then change this from 'url' to 'href',
+                "id":"alt",
+                "target": "alt"
             },
             "set_attributes": {
-                "rel": "nofollow",
-                "target": "_blank"
+                "rel": "nofollow"
             }
         },
         "img": {
