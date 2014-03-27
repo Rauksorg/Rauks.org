@@ -182,7 +182,7 @@ var wysihtml5ParserRules = {
         },
         "a": {
             "check_attributes": {
-                "href": "alt", // if you compiled master manually then change this from 'url' to 'href',
+                "href": "url", // if you compiled master manually then change this from 'url' to 'href',
                 "id":"alt",
                 "target": "alt"
             },
