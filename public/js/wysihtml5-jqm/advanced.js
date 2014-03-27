@@ -187,8 +187,7 @@ var wysihtml5ParserRules = {
                 "target": "alt"
             },
             "set_attributes": {
-                "rel": "nofollow",
-                "data-ajax":"false"
+                "rel": "nofollow"
             }
         },
         "img": {
