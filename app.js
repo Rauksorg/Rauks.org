@@ -16,15 +16,17 @@ You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
 // Check if running under cloud9 to set environnement variables
-if (process.env.C9_PROJECT) {
-    require('./private.js');
-}
+// if (process.env.C9_PROJECT) {
+//     require('./private.js');
+// }
 var express = require("express"),
     app = express(),
     oneYear = 31557600000;
 app.configure(function() {
     app.use(express.compress());
-    app.use(express.static(__dirname + '/public', { maxAge: oneYear }));
+    app.use(express.static(__dirname + '/public', {
+        maxAge: oneYear
+    }));
     app.use(express.json());
     app.use(express.urlencoded());
 });
@@ -101,8 +103,8 @@ db.once('open', function callback() {
     // declare routes
     db_driven_route("about", "Pourquoi nous avons développé Rauks.org ?");
     db_driven_route("system", "Système de jeu");
-    db_driven_route("material", "Matériel de jeu");
     db_driven_route("background", "Univers du jeu");
+    db_driven_route("tools", "Outils pour le jeu");
     db_driven_route("admin", "Administration");
     // 
     // route receiving texte modifications
@@ -113,7 +115,7 @@ db.once('open', function callback() {
                 name: "nouveau",
                 category: "nouveau",
                 title: "Nouveau",
-                descript : "Description",
+                descript: "Description",
                 text: "<h2>Titre</h2><p>Paragraphe</p>"
             });
             createarticle.save(function(err) {

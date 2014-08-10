@@ -2,7 +2,19 @@
     "run": {
         "@path": "/.c9/runners",
         "configs": {
-            "json()": {},
+            "json()": {
+                "Default": {
+                    "runner": "Node.js (default)",
+                    "command": "app.js",
+                    "debug": true,
+                    "env": {
+                        "MONGOHQ_URL": "\"mongodb://cloud9:Ww47Z3g8U53wtuC@paulo.mongohq.com:10003/app19251517\"",
+                        "ADMIN_LOGIN": "\"admin\"",
+                        "ADMIN_PSWD": "\"admin\""
+                    },
+                    "name": "Default"
+                }
+            },
             "@inited": "true"
         }
     },
