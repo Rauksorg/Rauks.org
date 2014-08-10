@@ -21,14 +21,14 @@ var express = require("express"),
 
 
 app.use(express.compress());
-app.use(express.static(__dirname + '/public', {
+app.use(express.static('./public', {
     maxAge: oneYear
 }));
 app.use(express.json());
 app.use(express.urlencoded());
-
-
 app.use('/admin', express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_PSWD));
+
+
 app.listen(process.env.PORT, process.env.IP);
 //
 // Routeur simple
