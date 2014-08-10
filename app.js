@@ -15,21 +15,19 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-// Check if running under cloud9 to set environnement variables
-// if (process.env.C9_PROJECT) {
-//     require('./private.js');
-// }
 var express = require("express"),
     app = express(),
     oneYear = 31557600000;
-app.configure(function() {
-    app.use(express.compress());
-    app.use(express.static(__dirname + '/public', {
-        maxAge: oneYear
-    }));
-    app.use(express.json());
-    app.use(express.urlencoded());
-});
+
+
+app.use(express.compress());
+app.use(express.static(__dirname + '/public', {
+    maxAge: oneYear
+}));
+app.use(express.json());
+app.use(express.urlencoded());
+
+
 app.use('/admin', express.basicAuth(process.env.ADMIN_LOGIN, process.env.ADMIN_PSWD));
 app.listen(process.env.PORT, process.env.IP);
 //
