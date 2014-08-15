@@ -15,7 +15,8 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with Rauks.org.  If not, see <http://www.gnu.org/licenses/>.
 */
-$(document).on("pagebeforeshow", function() {
+
+$(document).on("pagecreate", function() {
     var savepage = function() {
         // var articleid come from jade template
         $.ajax({
@@ -86,6 +87,4 @@ $(document).on("pagebeforeshow", function() {
             }, ]
         })).listview("refresh");
     });
-
-
 });

@@ -1,0 +1,59 @@
+extends header.jade
+block content
+    h1.centering.maintitle Générateur de noms
+    div.paragraphe_xlarge
+        fieldset(data-role='controlgroup', data-type='horizontal')
+            input#radio-choice-1(type='radio', name='radio-choice', value='choice-1', checked='checked')
+            label(for='radio-choice-1' style="width:75px") M/F
+            input#radio-choice-2(type='radio', name='radio-choice', value='choice-2')
+            label(for='radio-choice-2' style="width:75px") M
+            input#radio-choice-3(type='radio', name='radio-choice', value='choice-3')
+            label(for='radio-choice-3' style="width:75px") F
+        div.ui-field-contain
+            fieldset(data-role='controlgroup', data-type='horizontal', style="margin-bottom:5px")
+                input#checkbox-5.people(type='checkbox', name='checkbox-5', checked="checked" )
+                label(for='checkbox-5', style="width:110px; margin-right:5px;") Orc
+                input#checkbox-6.group(type='checkbox', name='checkbox-6')
+                label(for='checkbox-6', style="width:110px") Pâle
+                input#checkbox-7.group(type='checkbox', name='checkbox-7')
+                label(for='checkbox-7', style="width:110px") Gris
+                input#checkbox-8.group(type='checkbox', name='checkbox-8')
+                label(for='checkbox-8', style="width:110px") Noir
+            fieldset(data-role='controlgroup', data-type='horizontal')
+                input#checkbox-5.people(type='checkbox', name='checkbox-5', checked="checked")
+                label(for='checkbox-5', style="width:110px; margin-right:5px;" ) Humain
+                input#checkbox-6.group(type='checkbox', name='checkbox-6')
+                label(for='checkbox-6', style="width:110px") Imperial
+                input#checkbox-7.group(type='checkbox', name='checkbox-7')
+                label(for='checkbox-7', style="width:110px") Bassier
+                input#checkbox-8.group(type='checkbox', name='checkbox-8')
+                label(for='checkbox-8', style="width:110px") Nordique
+        ul(data-role='listview' data-inset="true")
+            li
+                h2 Jean DUPONT
+            li
+                h2 John MCTEST
+            li
+                h2 Ali BABA
+        button(data-inline="true") Noms suivants
+    script(type='text/javascript').
+        $(document).on("pagecreate",function(){
+        
+            $(".people").on("change",function(){
+                $(".group").attr("checked",false).checkboxradio("refresh");
+
+            })
+            $(".group").on("change",function(){
+                $(".people").attr("checked",false).checkboxradio("refresh");
+
+            })
+            $.ajax({
+                url : 'admin',
+                type : 'POST',
+                data : JSON.stringify("{hello:hey}"),
+                contentType : 'application/json',
+                dataType : 'json',
+                success : function(result){ console.log("hello")}
+            })
+   
+        })

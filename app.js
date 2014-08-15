@@ -104,6 +104,12 @@ db.once('open', function callback() {
     db_driven_route("background", "Univers du jeu");
     db_driven_route("tools", "Outils pour le jeu");
     db_driven_route("admin", "Administration");
+    
+    
+     app.get('/namegen', function(req, res) {
+         res.render("namegen.jade");
+     });
+    
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function(req, res) {

@@ -1,4 +1,4 @@
-$(document).on("pageinit", function(event) {
+$(document).on("pagecreate", function(event) {
     if ($(".centertoolbar")[0]) {
         // Do something here if an element with this class exists
 
