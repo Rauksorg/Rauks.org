@@ -46,6 +46,38 @@ var db = mongoose.connection;
 //DB open function
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
 db.once('open', function callback() {
+    var namesSchema = new mongoose.Schema({
+        name: String,
+        gender: String,
+        type: String,
+        people: String,
+        rand: {
+            type: mongoose.Schema.Types.Mixed,
+            default: [Math.random(), 0]
+        }
+    });
+    var name = mongoose.model('name', namesSchema);
+    name.findOne({
+        type: "f",
+        rand: {
+            $near: [Math.random(), 0]
+        }
+    }, function(error, result) {
+        var respeople = result.people
+        console.log(result.name);
+        name.findOne({
+            type: "l",
+            people: respeople,
+            rand: {
+                $near: [Math.random(), 0]
+            }
+        }, function(error, result) {
+            console.log(result.name);
+
+        });
+
+    });
+
     //
     //Mongoose schema
     var articleSchema = mongoose.Schema({
@@ -104,12 +136,12 @@ db.once('open', function callback() {
     db_driven_route("background", "Univers du jeu");
     db_driven_route("tools", "Outils pour le jeu");
     db_driven_route("admin", "Administration");
-    
-    
-     app.get('/namegen', function(req, res) {
-         res.render("namegen.jade");
-     });
-    
+
+
+    app.get('/namegen', function(req, res) {
+        res.render("namegen.jade");
+    });
+
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function(req, res) {
