@@ -1,0 +1,181 @@
+extends header.jade
+block content
+    h1.centering.maintitle Générateur de PJ
+    div.paragraphe_xlarge
+        label(for='basic') Nom :
+        input#basic(type='text', value='')
+        .ui-grid-a.ui-responsive
+            .ui-block-a
+                .ui-field-contain
+                    label(for='flip-1') Sexe : 
+                    select#flip-1(data-role='slider')
+                        option(value='m') M
+                        option(value='f') F
+            .ui-block-b
+                .ui-field-contain
+                    label.select(for='select-choice-a') Ethnie :
+                    select#select-choice-a(name='select-choice-a', data-inline="true")
+                        option(value='') 
+                        option(value='') Bassier
+                        option(value='') Nordique
+                        option(value='') Impérial
+                        option(value='') Orc Clair
+                        option(value='') Orc Gris
+                        option(value='') Orc Noir
+            
+        .ui-grid-a.ui-responsive
+            .ui-block-a
+                .ui-field-contain
+                    label(for='slider-filla') Physique : 
+                    input#slider-filla(type='range', value='2', min='1', max='4', data-highlight='true')
+                    label(for='slider-fillb') Perception : 
+                    input#slider-fillb(type='range', value='2', min='1', max='4', data-highlight='true')
+                    label(for='slider-fillc') Intellignce : 
+                    input#slider-fillc(type='range', value='2', min='1', max='4', data-highlight='true')
+        
+            .ui-block-b
+                .ui-field-contain
+                    label(for='slider-filld') Charisme : 
+                    input#slider-filld(type='range', value='2', min='1', max='4', data-highlight='true')
+                    label(for='slider-fille') Compétence : 
+                    input#slider-fille(type='range', value='3', min='2', max='5', data-highlight='true')
+                    label(for='slider-fillf') Relance : 
+                    input#slider-fillf(type='range',  value='5', min='3', max='9', step="2", data-highlight='true')
+                    
+        .ui-grid-b.ui-responsive
+            .ui-block-a
+                select#select-choice
+                    option(value='')
+                    optgroup(label="Physique")
+                      option(value='') Athlétisme / Ironman
+                      option(value='') Agilité / Acrobatie
+                      option(value='') Survie / Résistance
+                      option(value='') Tir au jugé / Tir rapide
+                      option(value='') Combat Rapproché / Maîtrise du corps à corps
+                    optgroup(label="Perception")
+                      option(value='') Réflexe / Fourberie
+                      option(value='') Tir visé / Tir de précision
+                      option(value='') Observation / Sixième Sens
+                      option(value='') Camouflage / Furtivité
+                      option(value='') Défense / Maîtrise de la défense
+                    optgroup(label="Intelligence")
+                      option(value='') Raisonnement / Genius
+                      option(value='') Premiers secours / Médecine
+                      option(value='') Mémoire / Science infuse
+                      option(value='') Bricolage / Mécanisme
+                      option(value='') Empathie / Psychanalyse
+                    optgroup(label="Charisme")
+                      option(value='') Persuasion / Négociation
+                      option(value='') Explication / Commandement
+                      option(value='') Charme / Aura
+                      option(value='') Intimidation / Manipulation
+                      option(value='') Mensonge / Comédie
+                select#select-choice
+                    option(value='')
+                    optgroup(label="Physique")
+                      option(value='') Athlétisme / Ironman
+                      option(value='') Agilité / Acrobatie
+                      option(value='') Survie / Résistance
+                      option(value='') Tir au jugé / Tir rapide
+                      option(value='') Combat Rapproché / Maîtrise du corps à corps
+                    optgroup(label="Perception")
+                      option(value='') Réflexe / Fourberie
+                      option(value='') Tir visé / Tir de précision
+                      option(value='') Observation / Sixième Sens
+                      option(value='') Camouflage / Furtivité
+                      option(value='') Défense / Maîtrise de la défense
+                    optgroup(label="Intelligence")
+                      option(value='') Raisonnement / Genius
+                      option(value='') Premiers secours / Médecine
+                      option(value='') Mémoire / Science infuse
+                      option(value='') Bricolage / Mécanisme
+                      option(value='') Empathie / Psychanalyse
+                    optgroup(label="Charisme")
+                      option(value='') Persuasion / Négociation
+                      option(value='') Explication / Commandement
+                      option(value='') Charme / Aura
+                      option(value='') Intimidation / Manipulation
+                      option(value='') Mensonge / Comédie
+            .ui-block-b
+                select#select-choice
+                    option(value='')
+                    optgroup(label="Physique")
+                      option(value='') Athlétisme / Ironman
+                      option(value='') Agilité / Acrobatie
+                      option(value='') Survie / Résistance
+                      option(value='') Tir au jugé / Tir rapide
+                      option(value='') Combat Rapproché / Maîtrise du corps à corps
+                    optgroup(label="Perception")
+                      option(value='') Réflexe / Fourberie
+                      option(value='') Tir visé / Tir de précision
+                      option(value='') Observation / Sixième Sens
+                      option(value='') Camouflage / Furtivité
+                      option(value='') Défense / Maîtrise de la défense
+                    optgroup(label="Intelligence")
+                      option(value='') Raisonnement / Genius
+                      option(value='') Premiers secours / Médecine
+                      option(value='') Mémoire / Science infuse
+                      option(value='') Bricolage / Mécanisme
+                      option(value='') Empathie / Psychanalyse
+                    optgroup(label="Charisme")
+                      option(value='') Persuasion / Négociation
+                      option(value='') Explication / Commandement
+                      option(value='') Charme / Aura
+                      option(value='') Intimidation / Manipulation
+                      option(value='') Mensonge / Comédie
+                select#select-choice
+                    option(value='')
+                    optgroup(label="Physique")
+                      option(value='') Athlétisme / Ironman
+                      option(value='') Agilité / Acrobatie
+                      option(value='') Survie / Résistance
+                      option(value='') Tir au jugé / Tir rapide
+                      option(value='') Combat Rapproché / Maîtrise du corps à corps
+                    optgroup(label="Perception")
+                      option(value='') Réflexe / Fourberie
+                      option(value='') Tir visé / Tir de précision
+                      option(value='') Observation / Sixième Sens
+                      option(value='') Camouflage / Furtivité
+                      option(value='') Défense / Maîtrise de la défense
+                    optgroup(label="Intelligence")
+                      option(value='') Raisonnement / Genius
+                      option(value='') Premiers secours / Médecine
+                      option(value='') Mémoire / Science infuse
+                      option(value='') Bricolage / Mécanisme
+                      option(value='') Empathie / Psychanalyse
+                    optgroup(label="Charisme")
+                      option(value='') Persuasion / Négociation
+                      option(value='') Explication / Commandement
+                      option(value='') Charme / Aura
+                      option(value='') Intimidation / Manipulation
+                      option(value='') Mensonge / Comédie
+            .ui-block-c
+                select#select-choice
+                    option(value='')
+                    optgroup(label="Physique")
+                      option(value='') Athlétisme / Ironman
+                      option(value='') Agilité / Acrobatie
+                      option(value='') Survie / Résistance
+                      option(value='') Tir au jugé / Tir rapide
+                      option(value='') Combat Rapproché / Maîtrise du corps à corps
+                    optgroup(label="Perception")
+                      option(value='') Réflexe / Fourberie
+                      option(value='') Tir visé / Tir de précision
+                      option(value='') Observation / Sixième Sens
+                      option(value='') Camouflage / Furtivité
+                      option(value='') Défense / Maîtrise de la défense
+                    optgroup(label="Intelligence")
+                      option(value='') Raisonnement / Genius
+                      option(value='') Premiers secours / Médecine
+                      option(value='') Mémoire / Science infuse
+                      option(value='') Bricolage / Mécanisme
+                      option(value='') Empathie / Psychanalyse
+                    optgroup(label="Charisme")
+                      option(value='') Persuasion / Négociation
+                      option(value='') Explication / Commandement
+                      option(value='') Charme / Aura
+                      option(value='') Intimidation / Manipulation
+                      option(value='') Mensonge / Comédie
+
+        button Non valide, veuillez corriger les éléments indiqués
+        button Soumettre à l'administration impériale

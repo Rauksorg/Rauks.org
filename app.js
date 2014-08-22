@@ -46,6 +46,8 @@ var db = mongoose.connection;
 //DB open function
 db.on('error', console.error.bind(console, 'mongodb connection error:'));
 db.once('open', function callback() {
+    //
+    //namegen schema
     var namesSchema = new mongoose.Schema({
         name: String,
         gender: String,
@@ -57,29 +59,8 @@ db.once('open', function callback() {
         }
     });
     var name = mongoose.model('name', namesSchema);
-    name.findOne({
-        type: "f",
-        rand: {
-            $near: [Math.random(), 0]
-        }
-    }, function(error, result) {
-        var respeople = result.people
-        console.log(result.name);
-        name.findOne({
-            type: "l",
-            people: respeople,
-            rand: {
-                $near: [Math.random(), 0]
-            }
-        }, function(error, result) {
-            console.log(result.name);
-
-        });
-
-    });
-
     //
-    //Mongoose schema
+    //Article schema
     var articleSchema = mongoose.Schema({
         name: String,
         category: String,
@@ -87,10 +68,8 @@ db.once('open', function callback() {
         descript: String,
         text: String
     });
-    // articleSchema.set('autoIndex', false);
-    // 
-    // Mongoose model
     var article = mongoose.model('article', articleSchema);
+    //
     // db driven routeur function
     var db_driven_route = function(route, title) {
         app.get('/' + route, function(req, res) {
@@ -139,9 +118,39 @@ db.once('open', function callback() {
 
 
     app.get('/namegen', function(req, res) {
+        //test ui
         res.render("namegen.jade");
-    });
+        //
+        //test random name
 
+        name.findOne({
+            type: "f",
+            rand: {
+                $near: [Math.random(), 0]
+            }
+        }, function(error, result) {
+            var respeople = result.people;
+            var fname = result.name;
+            name.findOne({
+                type: "l",
+                people: respeople,
+                rand: {
+                    $near: [Math.random(), 0]
+                }
+            }, function(error, result) {
+                var lname = result.name;
+                // res.send(fname + " " + lname);
+            });
+
+        });
+        //end test random name
+        
+
+    });
+     app.get('/pjgen', function(req, res) {
+        //test ui
+        res.render("pjgen.jade");
+     });
     // 
     // route receiving texte modifications
     app.post('/admin/ajax', function(req, res) {
