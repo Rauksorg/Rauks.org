@@ -2,6 +2,8 @@ extends header.jade
 block content
     h1.centering.maintitle Générateur de PJ
     div.paragraphe_xlarge
+    
+        h3 Généralités
         label(for='basic') Nom :
         input#basic(type='text', value='')
         .ui-grid-a.ui-responsive
@@ -14,15 +16,16 @@ block content
             .ui-block-b
                 .ui-field-contain
                     label.select(for='select-choice-a') Ethnie :
-                    select#select-choice-a(name='select-choice-a', data-inline="true")
-                        option(value='') 
+                    select#select-choice-a(name='select-choice-a', data-inline="false")
+                        option(value='')  
                         option(value='') Bassier
                         option(value='') Nordique
                         option(value='') Impérial
                         option(value='') Orc Clair
                         option(value='') Orc Gris
                         option(value='') Orc Noir
-            
+        
+        h3 Caractéristiques
         .ui-grid-a.ui-responsive
             .ui-block-a
                 .ui-field-contain
@@ -41,11 +44,13 @@ block content
                     input#slider-fille(type='range', value='3', min='2', max='5', data-highlight='true')
                     label(for='slider-fillf') Relance : 
                     input#slider-fillf(type='range',  value='5', min='3', max='9', step="2", data-highlight='true')
-                    
+            p 18 points à attribuer
+        
+        h3 Compétences
         .ui-grid-b.ui-responsive
             .ui-block-a
                 select#select-choice
-                    option(value='')
+                    option(value='')  
                     optgroup(label="Physique")
                       option(value='') Athlétisme / Ironman
                       option(value='') Agilité / Acrobatie
@@ -71,7 +76,7 @@ block content
                       option(value='') Intimidation / Manipulation
                       option(value='') Mensonge / Comédie
                 select#select-choice
-                    option(value='')
+                    option(value='')  
                     optgroup(label="Physique")
                       option(value='') Athlétisme / Ironman
                       option(value='') Agilité / Acrobatie
@@ -98,7 +103,7 @@ block content
                       option(value='') Mensonge / Comédie
             .ui-block-b
                 select#select-choice
-                    option(value='')
+                    option(value='')  
                     optgroup(label="Physique")
                       option(value='') Athlétisme / Ironman
                       option(value='') Agilité / Acrobatie
@@ -124,7 +129,7 @@ block content
                       option(value='') Intimidation / Manipulation
                       option(value='') Mensonge / Comédie
                 select#select-choice
-                    option(value='')
+                    option(value='')  
                     optgroup(label="Physique")
                       option(value='') Athlétisme / Ironman
                       option(value='') Agilité / Acrobatie
@@ -151,7 +156,7 @@ block content
                       option(value='') Mensonge / Comédie
             .ui-block-c
                 select#select-choice
-                    option(value='')
+                    option(value='')  
                     optgroup(label="Physique")
                       option(value='') Athlétisme / Ironman
                       option(value='') Agilité / Acrobatie
@@ -176,6 +181,41 @@ block content
                       option(value='') Charme / Aura
                       option(value='') Intimidation / Manipulation
                       option(value='') Mensonge / Comédie
-
+        
+        h3 Licences
+        .ui-grid-b.ui-responsive
+            .ui-block-a
+                select#select-choice
+                    option(value='') Tir visé : 
+                    option(value='') Revolver
+                    option(value='') Fusil
+                    
+                select#select-choice
+                    option(value='') Tir au jugé : 
+                    option(value='') Pistolet
+                    option(value='') Pistolet Mitrailleur
+                    
+                   
+            .ui-block-b
+                select#select-choice
+                    option(value='') Combat rapproché : 
+                    option(value='') Boxe Thaï
+                    option(value='') Machette
+                    option(value='') Tomahawk
+                    
+                   
+                select#select-choice
+                    option(value='') Self Defense : 
+                    option(value='') Jujitsu
+                    option(value='') Rapière
+                    option(value='') Bouclier
+                   
+            .ui-block-c
+                select#select-choice
+                    option(value='') Attaque Furtive : 
+                    option(value='') Corde à Piano
+                    option(value='') Derringer
+                    
+        
         button Non valide, veuillez corriger les éléments indiqués
         button Soumettre à l'administration impériale
