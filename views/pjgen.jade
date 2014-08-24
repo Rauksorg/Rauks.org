@@ -8,7 +8,7 @@ block content
         input#basic(type='text', value='')
         .ui-grid-a.ui-responsive
             .ui-block-a
-                .ui-field-contain
+                .ui-field-contain.switchrecolor
                     label(for='flip-1') Sexe : 
                     select#flip-1(data-role='slider')
                         option(value='m') M
@@ -215,7 +215,26 @@ block content
                     option(value='') Attaque Furtive : 
                     option(value='') Corde à Piano
                     option(value='') Derringer
-                    
+
+        h3 Traits Distinctifs
+        textarea#textarea-a(name='textarea' style="resize:none")
         
-        button Non valide, veuillez corriger les éléments indiqués
+        h3 Validation
+        div(style="text-align: center; margin-bottom:20px;")
+            i.fa.fa-check-square-o 
+            |   Nom |  
+            i.fa.fa-check-square-o 
+            |   Ethnie |  
+            i.fa.fa-check-square-o 
+            |   Caractéristiques |  
+            i.fa.fa-square-o 
+            |   Compétences |  
+            i.fa.fa-check-square-o 
+            |   Licences
+            
         button Soumettre à l'administration impériale
+    script(type='text/javascript').
+        $(document).on("pagecreate", function() {
+            $(".switchrecolor .ui-slider-label-a").removeClass("ui-btn-active").addClass("ui-btn-down-a")
+
+        })

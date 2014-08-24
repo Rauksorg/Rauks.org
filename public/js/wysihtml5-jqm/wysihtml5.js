@@ -171,6 +171,7 @@ window['rangy'] = (function() {
             if (areHostMethods(testRange, domRangeMethods) && areHostProperties(testRange, domRangeProperties)) {
                 implementsDomRange = true;
             }
+            // Try to resolve testrange chrome issue
             testRange.detach();
         }
 
